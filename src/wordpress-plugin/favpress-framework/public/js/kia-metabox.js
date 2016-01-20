@@ -8,7 +8,7 @@
 /* © Kathy Darling http://www.kathyisawesome.com
 /* 2012-03-07.
 /*
-/* A bit modification to work with Favpress (http://favpress.com)
+/* A bit modification to work with FavPress (http://favpress.com)
 /*-----------------------------------------------------------------------------------*/
 
 var KIA_metabox, tinyMCEbackupConfig = null;

@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		<div id="favpress-copyright" class="favpress-copyright">
-			<p><?php printf(__('This option panel is built using <a href="http://favpress.com/">Favpress %s</a>', '__PLUGIN_SLUG__'), FAVPRESS_VERSION); ?></p>
+			<p><?php printf(__('This option panel is built using <a href="http://favpress.com/" title="FavPress %s">FavPress</a>', '__PLUGIN_SLUG__'), FAVPRESS_VERSION); ?></p>
 		</div>
 	</div>
 </div>

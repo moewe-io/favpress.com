@@ -9,7 +9,7 @@ class FavPress_Option_Parser
 		$set = new FavPress_Option_Control_Set();
 
 		if(empty($arr['title']))
-			$arr['title'] = 'Favpress';
+			$arr['title'] = 'FavPress';
 		if(empty($arr['logo']))
 			$arr['logo']  = 'favpress-logo.png';
 

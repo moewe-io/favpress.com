@@ -223,6 +223,6 @@ msgstr ""
 #: views/option/set.php:93
 #, php-format
 msgid ""
-"This option panel is built using <a href=\"http://favpress.com/\">Favpress "
+"This option panel is built using <a href=\"http://favpress.com/\">FavPress "
 "%s</a>"
 msgstr ""

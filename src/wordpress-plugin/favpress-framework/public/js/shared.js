@@ -208,7 +208,7 @@ jQuery.fn.favpress_toggle = function(callback){
 
 /**
  * =============================================================
- * Favpress function
+ * FavPress function
  * =============================================================
  */
 

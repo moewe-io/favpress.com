@@ -1,5 +1,5 @@
-# LANGUAGE (LOCALE) translation for Favpress Framework.
-# Copyright (C) 2013 Favpress.com
+# LANGUAGE (LOCALE) translation for FavPress Framework.
+# Copyright (C) 2016 FavPress.com
 # Translators:
 #, fuzzy
 msgid ""
@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: FavPress Framework\n"
 "POT-Creation-Date: 2016-01-13 10:58+0100\n"
 "PO-Revision-Date: 2013-11-20 10:25+0000\n"
-"Last-Translator: Favpress <contact@vafour.com>\n"
+"Last-Translator: FavPress <contact@moewe.io>\n"
 "Language-Team: MOEWE <contact@moewe.io>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -226,5 +226,5 @@ msgstr ""
 
 #: views/option/set.php:93
 #, php-format
-msgid "This option panel is built using <a href=\"http://favpress.com/\">Favpress %s</a>"
+msgid "This option panel is built using <a href=\"http://favpress.com/\">FavPress %s</a>"
 msgstr ""

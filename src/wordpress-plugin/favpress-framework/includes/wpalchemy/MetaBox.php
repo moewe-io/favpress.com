@@ -12,7 +12,7 @@
 
 /**
  * This is modified version so that WPAlchemy supports nested repeatable group
- * Favpress (http://Favpress.com)
+ * FavPress (http://favpress.com)
  */
 
 // todo: perhaps move _global_head and _global_foot locally, when first run

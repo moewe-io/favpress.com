@@ -15,7 +15,7 @@ Our initial goals are
 
 We welcome to any contribution, you can:
 
-1. Contribute to the Favpress code base.
+1. Contribute to the FavPress code base.
 2. Report issues and help within the issues section.
 3. Spread the word.
 4. Help us translate the core.

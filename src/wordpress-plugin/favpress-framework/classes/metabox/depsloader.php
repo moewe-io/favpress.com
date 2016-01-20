@@ -1,6 +1,6 @@
 <?php
 
-class Favpress_Metabox_Depsloader
+class FavPress_Metabox_Depsloader
 {
 
 	/**

@@ -44,7 +44,7 @@ if (!function_exists('favpress_tgm_ac_fafpress_check')) {
     {
         if (defined('FAVPRESS_VERSION') and class_exists('TGM_Plugin_Activation')) {
             foreach (TGM_Plugin_Activation::$instance->plugins as $key => &$plugin) {
-                if ($plugin['name'] === 'Favpress Framework Plugin') {
+                if ($plugin['name'] === 'FavPress Framework Plugin') {
                     unset(TGM_Plugin_Activation::$instance->plugins[$key]);
                 }
             }
