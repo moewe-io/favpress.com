@@ -29,11 +29,11 @@ class Favpress_Metabox_Depsloader
 			'use_new_media_upload' => false,
 			'main_js'              => array(
 				'name' => 'favpress-metabox',
-				'path' => FAVPRESS_PUBLIC_URL . '/js/metabox.min.js'
+				'path' => FAVPRESS_PUBLIC_URL . '/js/metabox.js'
 			),
 			'main_css'             => array(
 				'name' => 'favpress-metabox',
-				'path' => FAVPRESS_PUBLIC_URL . '/css/metabox.min.css'
+				'path' => FAVPRESS_PUBLIC_URL . '/css/metabox.css'
 			),
 		);
 

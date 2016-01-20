@@ -97,7 +97,7 @@ return array(
 				'override' => true,
 			),
 			'shared' => array(
-				'path'     => FAVPRESS_PUBLIC_URL . '/js/shared.min.js',
+				'path'     => FAVPRESS_PUBLIC_URL . '/js/shared.js',
 				'deps'     => array(),
 				'ver'      => '1.1',
 				'localize' => array(
@@ -110,7 +110,7 @@ return array(
 				)
 			),
 			'favpress-option' => array(
-				'path'     => FAVPRESS_PUBLIC_URL . '/js/option.min.js',
+				'path'     => FAVPRESS_PUBLIC_URL . '/js/option.js',
 				'deps'     => array(),
 				'ver'      => '2.0',
 				'localize' => array(
@@ -121,7 +121,7 @@ return array(
 				)
 			),
 			'favpress-metabox' => array(
-				'path'     => FAVPRESS_PUBLIC_URL . '/js/metabox.min.js',
+				'path'     => FAVPRESS_PUBLIC_URL . '/js/metabox.js',
 				'deps'     => array(),
 				'ver'      => '2.0',
 				'localize' => array(
@@ -181,15 +181,15 @@ return array(
 				'deps' => array(),
 			),
 			'favpress-option' => array(
-				'path' => FAVPRESS_PUBLIC_URL . '/css/option.min.css',
+				'path' => FAVPRESS_PUBLIC_URL . '/css/option.css',
 				'deps' => array(),
 			),
 			'favpress-metabox' => array(
-				'path' => FAVPRESS_PUBLIC_URL . '/css/metabox.min.css',
+				'path' => FAVPRESS_PUBLIC_URL . '/css/metabox.css',
 				'deps' => array(),
 			),
 			'favpress-shortcode' => array(
-				'path' => FAVPRESS_PUBLIC_URL . '/css/shortcode.min.css',
+				'path' => FAVPRESS_PUBLIC_URL . '/css/shortcode.css',
 				'deps' => array('reveal'),
 			),
 		),

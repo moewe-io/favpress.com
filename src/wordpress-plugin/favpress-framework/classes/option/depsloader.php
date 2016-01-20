@@ -32,11 +32,11 @@ class FavPress_Option_Depsloader
 			'use_new_media_upload' => false,
 			'main_js'  => array(
 				'name' => 'favpress-option',
-				'path' => FAVPRESS_PUBLIC_URL . '/js/option.min.js',
+				'path' => FAVPRESS_PUBLIC_URL . '/js/option.js',
 			),
 			'main_css' => array(
 				'name' => 'favpress-option',
-				'path' => FAVPRESS_PUBLIC_URL . '/css/option.min.css'
+				'path' => FAVPRESS_PUBLIC_URL . '/css/option.css'
 			),
 		);
 
