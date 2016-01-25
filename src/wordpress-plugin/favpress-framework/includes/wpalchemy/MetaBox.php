@@ -128,14 +128,14 @@ class WPAlchemy_MetaBox
 	 * an associative array in a single meta entry in the wp_postmeta table or
 	 * data can be set and individual entries in the wp_postmeta table, the 
 	 * following constants should be used when setting this option, 
-	 * WPALCHEMY_MODE_ARRAY (default) and WPALCHEMY_MODE_EXTRACT, this option
+	 * WPALCHEMY_MODE_ARRAY and WPALCHEMY_MODE_EXTRACT (default), this option
 	 * should be used when instantiating the class.
 	 *
 	 * @since	1.2
 	 * @access	public
 	 * @var		string
 	 */
-	var $mode = WPALCHEMY_MODE_ARRAY;
+	var $mode = WPALCHEMY_MODE_EXTRACT;
 
 	/**
 	 * When the mode option is set to WPALCHEMY_MODE_EXTRACT, you have to take
