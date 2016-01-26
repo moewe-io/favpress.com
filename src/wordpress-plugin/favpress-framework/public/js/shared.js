@@ -926,7 +926,11 @@ if ( favpress_wp.use_new_media_upload )
 		// handler for attachment
 		wp.media.editor.send.attachment = function(props, attachment) {
 
-			$input.val(attachment.url);
+			if($input.data('mode') == "url") {
+				$input.val(attachment.url);
+			} else {
+				$input.val(attachment.id);
+			}
 			$input.trigger('change');
 
 			if(attachment.type === 'image')
