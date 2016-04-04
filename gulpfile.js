@@ -57,7 +57,7 @@ gulp.task('copy-to-deploy-target', function () {
 });
 
 gulp.task('build-wordpress', function (cb) {
-    runSequence('copy-sources-wordpress', 'compile-styles', 'replace-placeholders', 'compile-mo-files', cb);
+    runSequence('copy-sources-wordpress', 'replace-placeholders', ['compile-styles', 'compile-mo-files'], cb);
 });
 
 gulp.task('build-wordpress-and-copy', function (cb) {
@@ -69,7 +69,7 @@ gulp.task('watch', ['default'], function () {
     watch('src/documentation/**', function () {
         gulp.start('build-documentation');
     });
-    watch('src/wordpress-plugin/**', function () {
+    watch('src/wordpress-artifact/**', function () {
         gulp.start('build-wordpress-and-copy');
     });
 });
@@ -93,7 +93,7 @@ gulp.task('copy-sources-documentation', function () {
 });
 
 gulp.task('copy-sources-wordpress', function () {
-    return gulp.src('src/wordpress-plugin/**').pipe(gulp.dest(targetFolder + '/release-full-package/' + config.pluginSlug));
+    return gulp.src('src/wordpress-artifact/**').pipe(gulp.dest(targetFolder + '/release-full-package/' + config.pluginSlug));
 });
 
 gulp.task('compile-styles', function () {
@@ -138,7 +138,7 @@ gulp.task('replace-placeholders', function (cb) {
 gulp.task('compile-mo-files', function (cb) {
     var walker = file_system.walk(targetFolder);
     walker.on("file", function (root, stat, next) {
-        if (['po', 'pot'].indexOf(getFileExtension(stat.name)) >= 0) {
+        if (config.skipGetTextParsing != true && ['po', 'pot'].indexOf(getFileExtension(stat.name)) >= 0) {
             var input = file_system.readFileSync(root + '/' + stat.name);
             var po = gettextParser.po.parse(input);
             var output = gettextParser.mo.compile(po);

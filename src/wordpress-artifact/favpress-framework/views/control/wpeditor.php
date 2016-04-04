@@ -15,4 +15,4 @@
 	<textarea class="favpress-input favpress-js-wpeditor" id="<?php echo $name . '_ce'; ?>" data-favpress-opt="<?php echo $opt; ?>" rows="10" cols="50" name="<?php echo $name; ?>" rows="3"><?php echo $value; ?></textarea>
 </div>
 
-<?php if(!$is_compact) echo FavPress_View::instance()->load('control/template_control_foot'); ?>
+<?php if(!$is_compact) echo FavPress_View::instance()->load('control/template_control_foot', $head_info); ?>

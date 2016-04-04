@@ -10,7 +10,7 @@ if (!function_exists('favpress_load_textdomain')) {
     add_action('plugins_loaded', 'favpress_load_textdomain');
     function favpress_load_textdomain()
     {
-        load_plugin_textdomain('__PRODUCT_SLUG__', false, FAVPRESS_DIR . '/lang/');
+        load_plugin_textdomain('__PRODUCT_SLUG__', false, FAVPRESS_DIR . '/languages/');
     }
 }
 
