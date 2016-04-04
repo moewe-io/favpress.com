@@ -7,7 +7,6 @@
 	id="<?php echo $name; ?>">
 	<div class="label">
 		<label><?php echo $label; ?></label>
-		<?php FavPress_Util_Text::print_if_exists($description, '<div class="description">%s</div>'); ?>
 	</div>
 	<div class="field">
 		<div class="input">

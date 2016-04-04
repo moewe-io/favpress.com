@@ -1,6 +1,11 @@
 <?php if(!$is_compact) echo FavPress_View::instance()->load('control/template_control_head', $head_info); ?>
 
-<?php foreach ($items as $item): ?>
+<?php
+echo '<pre>';
+var_dump($head_info);
+echo '</pre>';
+
+foreach ($items as $item): ?>
 <label>
 	<?php $checked = (in_array($item->value, $value)); ?>
 	<input <?php if($checked) echo 'checked'; ?> class="favpress-input<?php if($checked) echo " checked"; ?>" type="checkbox" name="<?php echo $name; ?>" value="<?php echo $item->value; ?>" />
