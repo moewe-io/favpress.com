@@ -320,7 +320,3 @@ if (!function_exists('favpress_option')) {
         return null;
     }
 }
-
-/**
- * EOF
- */

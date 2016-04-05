@@ -21,7 +21,7 @@ var placeholders = {
     '__PRODUCT_SLUG__': pluginFileName,
     '__PRODUCT_VERSION__': majorVersion + '.' + buildVersion,
     '__PRODUCT_TITLE__': 'FavPress',
-    '__PRODUCT_DESCRIPTION__': 'An option and metabox framework for WordPress based on the original Vafpress.',
+    '__PRODUCT_DESCRIPTION__': 'An option and metabox framework for WordPress for developers.',
     '__PRODUCT_URI__': 'http://www.favpress.com/',
     '__PRODUCT_DOCUMENTATION_URI__': 'http://www.favpress.com/',
     '__PLUGIN_PRODUCT_TITLE__': 'FavPress',
