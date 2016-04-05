@@ -13,10 +13,10 @@ Our initial goals are
 
 ## Contribution
 
-We welcome to any contribution, you can:
+Any contribution is welcome. You can:
 
 1. Contribute to the FavPress code base.
-2. Report issues and help within the issues section.
+2. Report issues and help others within the issues section.
 3. Spread the word.
 4. Help us translate the core.
 5. Develop plugins using the framework.
@@ -125,4 +125,4 @@ Icons:
   by Dave Gandy
   http://fortawesome.github.com/Font-Awesome/
 
-and propably many others.
+and probably many others.
