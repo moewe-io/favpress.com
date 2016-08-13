@@ -10,8 +10,8 @@ deploy:
   api_key:
     secure: LTODsjOS3SOqFZNnfnWxVano0ejfzd27EwswSEtb8aBXo50bvK2TeKx8pobzpDNYNAsVBfLD/7eRmKiVLGSiuQraLjdqiBHC4NDgbal3g3H4WnH54+OdcTi2jT9QW0RXSgiDgn5q4ZVbaZJebwO1IYWneB/PqfFxTsndasjucKAK3t7+8gvG2roCyKqPPtlsCKSK2+23m26eT4zdGvXVPMDHhPQ489l09LJTXRfrjXAB1E7sVvLdhqw38WdDPe3yxxSBqpaPpxExRPpPsdP53+HRsHxIjj/AxF/YiTo8v53RZ2nZ55in5YK4VdsF6NnvUizLl3aNyz1knhWgm8bJ2dRNufT4vR1KmHQpT/7yaKH8VLQhNmdxFAUNYsn9k9uHxmRF7jFhSII4hQoeBgHlcqthaC8LKaU7hl8l4I7u22WhmpZra83xwxe3kMUUKtd/2tJk57PE4xzts1ClzTOCI+S3f056rz4tDSsUBB5+J5FUhfioAeTzBmw19foOlpM3X+O4+z86EU7jGpBvAEfx05plRI9NjyBG+IPn0Y3pwKYxxb/9LFI3pu7IdZmfvW0YQVDkdl0GrUB9WJOgZGKMokKr1/JICCkxWmBcUoTVixiIpo6rwZ5N8WjOtz/mfxiZ6XvJ+DQzysgdOUYRkO4YSuJmxLBMo+mbbEvLDXhovjA=
   file:
-    - /target/favpress.zip
-    - /target/updator.json
+    - $TRAVIS_BUILD_DIR/target/favpress.zip
+    - $TRAVIS_BUILD_DIR/target/updator.json
   skip_cleanup: true
-   on:
-     tags: true
+  on:
+    tags: true
