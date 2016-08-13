@@ -14,6 +14,12 @@ if(!class_exists('WPAlchemy_MetaBox'))
 	require_once FavPress_FileSystem::instance()->resolve_path('includes', 'wpalchemy/MetaBox');
 }
 
+add_action('after_setup_theme', 'favpress_add_metaboxes', 20);
+
+function favpress_add_metaboxes(){
+    do_action('favpress_add_metaboxes');
+}
+
 class FavPress_Metabox extends WPAlchemy_MetaBox
 {
 
