@@ -14,12 +14,12 @@ var filesToIgnoreFromTarget = [];
 var date = new Date();
 var majorVersion = '2.1-Beta1';
 var buildVersion = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate() + '.' + date.getHours() + '.' + date.getMinutes() + '.' + date.getSeconds();
-
+var version = majorVersion + '.' + buildVersion;
 // Placeholders, which will be replaced within target files.
 // You can add anything you want.
 var placeholders = {
     '__PRODUCT_SLUG__': pluginFileName,
-    '__PRODUCT_VERSION__': majorVersion + '.' + buildVersion,
+    '__PRODUCT_VERSION__': version,
     '__PRODUCT_TITLE__': 'FavPress',
     '__PRODUCT_DESCRIPTION__': 'An option and metabox framework for WordPress for developers.',
     '__PRODUCT_URI__': 'http://www.favpress.com/',
@@ -28,7 +28,7 @@ var placeholders = {
     '__PLUGIN_URI__': 'http://www.favpress.com/',
     '__AUTHOR_NAME__': 'MOEWE',
     '__AUTHOR_URI__': 'http://www.moewe.io/en/',
-    '__UPDATER_BASE_PATH__': 'http://apps.moewe.io/favpress'
+    '__UPDATER_BASE_PATH__': 'https://github.com/moewe-io/favpress.com/releases/download/' + version + '/updater.json'
 };
 
 module.exports.pluginFileName = pluginFileName;

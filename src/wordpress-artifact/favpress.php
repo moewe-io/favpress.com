@@ -14,13 +14,12 @@ defined('FAVPRESS_PLUGIN_VERSION') or define('FAVPRESS_PLUGIN_VERSION', '__PRODU
 defined('FAVPRESS_PLUGIN_URL') or define('FAVPRESS_PLUGIN_URL', plugin_dir_url(__FILE__));
 defined('FAVPRESS_PLUGIN_DIR') or define('FAVPRESS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 defined('FAVPRESS_PLUGIN_FILE') or define('FAVPRESS_PLUGIN_FILE', __FILE__);
-defined('FAVPRESS_RELEASE_CHANNEL') or define('FAVPRESS_RELEASE_CHANNEL', '__RELEASE_CHANNEL__');
 
 require 'favpress-framework/bootstrap.php';
 
 require 'favpress-framework/includes/plugin-update-checker-3.0/plugin-update-checker.php';
 $favpress_updater = PucFactory::buildUpdateChecker(
-    '__UPDATER_BASE_PATH__/' . FAVPRESS_RELEASE_CHANNEL . '/updater.json',
+    '__UPDATER_BASE_PATH__/updater.json',
     __FILE__,
     '__PRODUCT_SLUG__',
     24
