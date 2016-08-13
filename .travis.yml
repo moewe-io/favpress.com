@@ -2,5 +2,6 @@ before_install:
 - npm install gulp -g
 install:
 - npm update
+- cp config.local.example.js config.local.js
 script:
 - gulp release
