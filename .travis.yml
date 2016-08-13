@@ -1,0 +1,6 @@
+before_install:
+- npm install gulp -g
+install:
+- npm update
+script:
+- gulp release

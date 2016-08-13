@@ -1,5 +1,6 @@
 FavPress Framework Plugin
 =========================
+![Build status](https://travis-ci.org/moewe-io/favpress.com.svg?branch=master)
 
 FavPress started as a hard copy of [Vafpress](https://github.com/vafour/vafpress-framework), which was abandoned by their original developers. 
 
