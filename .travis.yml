@@ -12,5 +12,6 @@ deploy:
   file:
     - target/favpress.zip
     - target/updator.json
-  on:
-    repo: moewe-io/favpress.com
+  skip_cleanup: true
+   on:
+     tags: true
