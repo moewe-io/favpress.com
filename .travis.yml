@@ -11,7 +11,7 @@ script:
 - gulp release
 after_success:
   - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip"
-  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updator.json"
+  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updater.json"
 deploy:
   provider: releases
   api_key:
