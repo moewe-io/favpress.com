@@ -28,7 +28,7 @@ var placeholders = {
     '__PLUGIN_URI__': 'http://www.favpress.com/',
     '__AUTHOR_NAME__': 'MOEWE',
     '__AUTHOR_URI__': 'http://www.moewe.io/en/',
-    '__UPDATER_BASE_PATH__': 'https://github.com/moewe-io/favpress.com/releases/download/' + version + '/updater.json'
+    '__UPDATER_BASE_PATH__': 'https://apps.moewe.io/favpress/stable/updater.json'
 };
 
 module.exports.pluginFileName = pluginFileName;

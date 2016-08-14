@@ -6,12 +6,26 @@ install:
 script:
 - gulp release
 deploy:
+  - "curl -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/development/favpress.zip"
+  - "curl -T $TRAVIS_BUILD_DIR/target/updator.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/development/updator.json"
+  on:
+    branch: master
+deploy:
+  - "curl -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/stable/favpress.zip"
+  - "curl -T $TRAVIS_BUILD_DIR/target/updator.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/stable/updator.json"
+  on:
+    branch: stable
+deploy:
   provider: releases
   api_key:
     secure: LTODsjOS3SOqFZNnfnWxVano0ejfzd27EwswSEtb8aBXo50bvK2TeKx8pobzpDNYNAsVBfLD/7eRmKiVLGSiuQraLjdqiBHC4NDgbal3g3H4WnH54+OdcTi2jT9QW0RXSgiDgn5q4ZVbaZJebwO1IYWneB/PqfFxTsndasjucKAK3t7+8gvG2roCyKqPPtlsCKSK2+23m26eT4zdGvXVPMDHhPQ489l09LJTXRfrjXAB1E7sVvLdhqw38WdDPe3yxxSBqpaPpxExRPpPsdP53+HRsHxIjj/AxF/YiTo8v53RZ2nZ55in5YK4VdsF6NnvUizLl3aNyz1knhWgm8bJ2dRNufT4vR1KmHQpT/7yaKH8VLQhNmdxFAUNYsn9k9uHxmRF7jFhSII4hQoeBgHlcqthaC8LKaU7hl8l4I7u22WhmpZra83xwxe3kMUUKtd/2tJk57PE4xzts1ClzTOCI+S3f056rz4tDSsUBB5+J5FUhfioAeTzBmw19foOlpM3X+O4+z86EU7jGpBvAEfx05plRI9NjyBG+IPn0Y3pwKYxxb/9LFI3pu7IdZmfvW0YQVDkdl0GrUB9WJOgZGKMokKr1/JICCkxWmBcUoTVixiIpo6rwZ5N8WjOtz/mfxiZ6XvJ+DQzysgdOUYRkO4YSuJmxLBMo+mbbEvLDXhovjA=
   file:
-    - $TRAVIS_BUILD_DIR/target/favpress.zip
-    - $TRAVIS_BUILD_DIR/target/updator.json
+  - "$TRAVIS_BUILD_DIR/target/favpress.zip"
+  - "$TRAVIS_BUILD_DIR/target/updator.json"
   skip_cleanup: true
   on:
     tags: true
+env:
+  global:
+  - secure: V0vcYtVFDUz7H0K+6YvOveiCYfAJdHiUbM82Jnw69I0A59I5WMVdW4Ew5ws4MYjJVccOdiXKPH1yHpzy7xRE/8lI27+WSkDwGWJ25JzQptYJvURxdVCEx9uograROG8IjpcT6N2T/rNkxLLNAGWXQTlgbXDksYG2WRy1o7OZGP4jtvttR41O6cr5LGg9QBNyLn3LxhBkuwdRFnd2YfVpCwOHCR0QmmvIqUYDdLJB+7M++FQW3SrJZN6r89NE/bBW3vU8DSnl9mcZcPBCxVvgKp9eULrQy8z0xPdKoMKzUKKnAXVj/DiESN+oKN5pvKFbVfOHTxzRrn5QtDYO0AKWsT95wpbVCro/uuz26N78ARHX2XqRMF7XLYN9h6OLbBw59grVmdISmZVXAAzeJwpO6w/lcgiaI4nhgx1m62RnDvwzWpKpvs/D08QTeb/AwrGKkMBgxJ94KNhOpQ1UX85XfXepE4kJYBs3MY+fCAp694R0T2UkrmVbzOvRUAZ/lbbr170/aUCFGHrudaa4yOC9Cerr7uW8X4gxPEeY8xKJ/jQcEuNbnURDvfVS9lzKDsA5rFUGiBaVodTYZluGYw90+39x1Nwi9eC24oLGuSJwKGs0PybADWuwCjbno9JWSYd9619c8DYz/AHxTRCg729HFXdB6gpTVkFdK8zmn1fRgJQ=
+  - secure: j3y0SvtiCe1dn52AZyVT6ay1h//XnSk+N1NwLzTW+4PsGjqnwnQSI1hSElxeDXRWZEOyGQhY2vzI7mFGJ0qqnQuoBcQAXTIbQBZF546vWN12blgFZLzOBpGaqwm4HtOPBOb1CcY40u1GPwOz/aYEEhJbTXehIqTcoQh94Oh8w9tFDb06VJlEJZMIp1wozumAqU33dPsMd7QclhyIiZXCf8fF3yR2KOLM4LQQx1aMRABh0HlAZhragxSFrdzTFITjn7Mi1Hcpz4WwhWVt1CnwhXqEFEe3lC4/AQElwnMz6FS6sulvW5O/Bhl7du/1y3Vp6DUY827PSDZy/cTpXylbDXDxtsrH+uQ/43p8CeF9AZFLjvhTIFk3wGHfGj1Dq4O4iNJ4oUUzUbNwpDGQPrQNubN50u43zfGo69JpCZ0s8W/5qMR768Ss7l1WmWH1wEECQZwzWiGcRSwbOr4cRpiWICn2hVTrjiFe8ndJR0Li0v9b/k/zsuorgHpvAuM5mQ2+r3wecFZofal7dOeke8CeZKpyPTz9+E2ixXd0+47dOx7XXjpcePQ2SUl6ps2zXTrCMHc/oSWPhgPgOCSN49aSl0vUhPNR5Sx9EmHwlfuD0zUdBD6o7DMbAQU6Z/14p6yIvJmrmMtA+e3TPslV0cjDxo5X2FNxRnHA+sRJVmUFVaU=
