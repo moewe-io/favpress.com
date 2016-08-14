@@ -27,7 +27,10 @@ abstract class FavPress_Control_FieldMulti extends FavPress_Control_Field
 			{
 				foreach ($arr['items']['data'] as $data)
 				{
-					if($data['source'] == 'function')
+                    if(!isset($data['source'])) {
+                        continue;
+                    }
+				    if($data['source'] == 'function')
 					{
 						$function     = $data['value'];
 						$params       = explode(',', !empty($data['params']) ? $data['params'] : '');
