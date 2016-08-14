@@ -1,24 +1,24 @@
+env:
+  global:
+    - secure: DjyeYKo8lyy2o/xvO7mxDU1KrtwYotnV9V6ngFemeD4PsjrxRgGu30eTpuM/emAXUxTTTJL2HbmjRZd5boA3fqoKRzGQbQk0momrdh1AHGIQMkEKBMdc/oVtnqIfQMHUslkwpAPVI0nzJqs8rh6mmxa5TYOsxo0Q0QaRYbuh89wgX8Y/pr3/R4EvhdcTvRDs4EFt0FGsWW9dwr8ZVWQYw7jNrNmalfQJ0ilDuxC/1LjpI/SRooMRAk2NnsRzzNufU/eCzHwvcoPcS0fz82Z22nKG1NiFQlA8r7q7RHmQN7Gk392sl7E9DBvaigrSR+WGT3ZNKFMBwKzFw/SFuc2o0JtAry60GUSZzm0PlmpoYkVPCNMbjQygbTLo3jCq+SYlHI4BZhhXvFPUOA/QVmT6NpdckV+tbmv+wtjeLSYTz9zEvs5FsdA2g/Nf1QXMDc8lvlxiTUPF3krzWAK/au4MiKqsGzA/JbBIDkdfSQkDSMLOPLsmMngOc24mKdeEjfRLDJvtUz7WCNUfukBH3wIX01iqWEkHgnQCfdQQ0rUhuZdXIkLea6tuMZZViV3MLCbUn0LkZ42AEJpq9nh578mXfXn9DibZhZReaV0ZkeK6UtOn2Sf+SYEFwO17KGoQ38Jz65omPGnKv6UM0Ss/AhzcFfhCBwSddyKLMBk2Pti+Na4=
+    - secure: LikrSYe6+Of6IIB0jfijLu1XittxLM647zxGmr/nEh1FYdU071DJZAdgLIPX3mFgNKdqflg5UleUbg3KfzZ7fqnEckz2Ule+10GuSuNntzlqqghpPeLDxYsBblr3PQobjc7tNyQPOgQzwAlRcK/2Lvt/CTOHzuYxk+qF5e8ZJNfzt7xSMrtVNhjRJ4+bz3yqD7Ll4qB+zDFfIhGi8dqsrcOi4wdHiMVZ+Wo6Js5YKlMRSpg/irhlp0t4u4HK28rCYY49lcLJ7o9LeYBOubGd+pz2ddK5ki3LNookQEhnju90ggunBJi5ohcUDADBz5bNh9QnqriKSUddd+h0vYgp0SmP4dfKjS1daN9MoDl/jmroITxOuE1VlkEVmv4np4Im+SsuU8ELl4ER8XFsAiPjIXbyRYpyZSL27iWzGxHQtlDhaeyrNktqP8mnhmzoIcBib9N0REkzPoPHOeOy4cyMaGFx8HDlWmuoRBFHRB0w0yEJXHm1xetVQ8TKsNGQwpdlKP8jSLWqIqYR+6ktb+CsdI1/tkQOWlEIoNqJtmV/knhdNt92T5+JyJINbAnv59YQxvDRNSj6Bvz37mozAMmFMP/+4jicIpY/epjLcoh/jARWlsif6s7ruY9GL1ka6kL4lnR5O0h6o2R1NTH6/aChM5BhMt5HPZMyar0eXrllGTk=
 before_install:
-  - npm install gulp -g
+- npm install gulp -g
 install:
-  - npm update
-  - cp config.local.example.js config.local.js
+- npm update
+- cp config.local.example.js config.local.js
 script:
-  - gulp release
+- gulp release
 after_success:
-  "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip"
-  "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updator.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updator.json"
+  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip"
+  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updator.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updator.json"
 deploy:
   provider: releases
   api_key:
     secure: LTODsjOS3SOqFZNnfnWxVano0ejfzd27EwswSEtb8aBXo50bvK2TeKx8pobzpDNYNAsVBfLD/7eRmKiVLGSiuQraLjdqiBHC4NDgbal3g3H4WnH54+OdcTi2jT9QW0RXSgiDgn5q4ZVbaZJebwO1IYWneB/PqfFxTsndasjucKAK3t7+8gvG2roCyKqPPtlsCKSK2+23m26eT4zdGvXVPMDHhPQ489l09LJTXRfrjXAB1E7sVvLdhqw38WdDPe3yxxSBqpaPpxExRPpPsdP53+HRsHxIjj/AxF/YiTo8v53RZ2nZ55in5YK4VdsF6NnvUizLl3aNyz1knhWgm8bJ2dRNufT4vR1KmHQpT/7yaKH8VLQhNmdxFAUNYsn9k9uHxmRF7jFhSII4hQoeBgHlcqthaC8LKaU7hl8l4I7u22WhmpZra83xwxe3kMUUKtd/2tJk57PE4xzts1ClzTOCI+S3f056rz4tDSsUBB5+J5FUhfioAeTzBmw19foOlpM3X+O4+z86EU7jGpBvAEfx05plRI9NjyBG+IPn0Y3pwKYxxb/9LFI3pu7IdZmfvW0YQVDkdl0GrUB9WJOgZGKMokKr1/JICCkxWmBcUoTVixiIpo6rwZ5N8WjOtz/mfxiZ6XvJ+DQzysgdOUYRkO4YSuJmxLBMo+mbbEvLDXhovjA=
   file:
-    - "$TRAVIS_BUILD_DIR/target/favpress.zip"
-    - "$TRAVIS_BUILD_DIR/target/updator.json"
+  - $TRAVIS_BUILD_DIR/target/favpress.zip
+  - $TRAVIS_BUILD_DIR/target/updator.json
   skip_cleanup: true
   on:
     tags: true
-env:
-  global:
-    - secure: DjyeYKo8lyy2o/xvO7mxDU1KrtwYotnV9V6ngFemeD4PsjrxRgGu30eTpuM/emAXUxTTTJL2HbmjRZd5boA3fqoKRzGQbQk0momrdh1AHGIQMkEKBMdc/oVtnqIfQMHUslkwpAPVI0nzJqs8rh6mmxa5TYOsxo0Q0QaRYbuh89wgX8Y/pr3/R4EvhdcTvRDs4EFt0FGsWW9dwr8ZVWQYw7jNrNmalfQJ0ilDuxC/1LjpI/SRooMRAk2NnsRzzNufU/eCzHwvcoPcS0fz82Z22nKG1NiFQlA8r7q7RHmQN7Gk392sl7E9DBvaigrSR+WGT3ZNKFMBwKzFw/SFuc2o0JtAry60GUSZzm0PlmpoYkVPCNMbjQygbTLo3jCq+SYlHI4BZhhXvFPUOA/QVmT6NpdckV+tbmv+wtjeLSYTz9zEvs5FsdA2g/Nf1QXMDc8lvlxiTUPF3krzWAK/au4MiKqsGzA/JbBIDkdfSQkDSMLOPLsmMngOc24mKdeEjfRLDJvtUz7WCNUfukBH3wIX01iqWEkHgnQCfdQQ0rUhuZdXIkLea6tuMZZViV3MLCbUn0LkZ42AEJpq9nh578mXfXn9DibZhZReaV0ZkeK6UtOn2Sf+SYEFwO17KGoQ38Jz65omPGnKv6UM0Ss/AhzcFfhCBwSddyKLMBk2Pti+Na4=
-    - secure: LikrSYe6+Of6IIB0jfijLu1XittxLM647zxGmr/nEh1FYdU071DJZAdgLIPX3mFgNKdqflg5UleUbg3KfzZ7fqnEckz2Ule+10GuSuNntzlqqghpPeLDxYsBblr3PQobjc7tNyQPOgQzwAlRcK/2Lvt/CTOHzuYxk+qF5e8ZJNfzt7xSMrtVNhjRJ4+bz3yqD7Ll4qB+zDFfIhGi8dqsrcOi4wdHiMVZ+Wo6Js5YKlMRSpg/irhlp0t4u4HK28rCYY49lcLJ7o9LeYBOubGd+pz2ddK5ki3LNookQEhnju90ggunBJi5ohcUDADBz5bNh9QnqriKSUddd+h0vYgp0SmP4dfKjS1daN9MoDl/jmroITxOuE1VlkEVmv4np4Im+SsuU8ELl4ER8XFsAiPjIXbyRYpyZSL27iWzGxHQtlDhaeyrNktqP8mnhmzoIcBib9N0REkzPoPHOeOy4cyMaGFx8HDlWmuoRBFHRB0w0yEJXHm1xetVQ8TKsNGQwpdlKP8jSLWqIqYR+6ktb+CsdI1/tkQOWlEIoNqJtmV/knhdNt92T5+JyJINbAnv59YQxvDRNSj6Bvz37mozAMmFMP/+4jicIpY/epjLcoh/jARWlsif6s7ruY9GL1ka6kL4lnR5O0h6o2R1NTH6/aChM5BhMt5HPZMyar0eXrllGTk=
