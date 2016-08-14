@@ -6,8 +6,8 @@ install:
 script:
 - gulp release
 deploy:
-  - "curl -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/development/favpress.zip"
-  - "curl -T $TRAVIS_BUILD_DIR/target/updator.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/development/updator.json"
+  "curl -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/development/favpress.zip"
+  "curl -T $TRAVIS_BUILD_DIR/target/updator.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/development/updator.json"
   on:
     branch: master
 deploy:
