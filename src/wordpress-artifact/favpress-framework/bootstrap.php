@@ -320,3 +320,10 @@ if (!function_exists('favpress_option')) {
         return null;
     }
 }
+
+// Allow loading of Metaboxes without the need to check for FavPress
+add_action('after_setup_theme', 'favpress_add_metaboxes', 20);
+
+function favpress_add_metaboxes(){
+    do_action('favpress_add_metaboxes');
+}
