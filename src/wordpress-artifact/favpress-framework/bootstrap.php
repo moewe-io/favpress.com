@@ -8,8 +8,7 @@ require_once 'autoload.php';
 
 if (!function_exists('favpress_load_textdomain')) {
     add_action('plugins_loaded', 'favpress_load_textdomain');
-    function favpress_load_textdomain()
-    {
+    function favpress_load_textdomain() {
         load_plugin_textdomain('__PRODUCT_SLUG__', false, FAVPRESS_DIR . '/languages/');
     }
 }
@@ -33,15 +32,13 @@ foreach (glob(FAVPRESS_DATA_DIR . "/*.php") as $datasource) {
 add_action('after_setup_theme', 'favpress_tgm_ac_check');
 
 if (!function_exists('favpress_tgm_ac_check')) {
-    function favpress_tgm_ac_check()
-    {
+    function favpress_tgm_ac_check() {
         add_action('tgmpa_register', 'favpress_tgm_ac_fafpress_check');
     }
 }
 
 if (!function_exists('favpress_tgm_ac_fafpress_check')) {
-    function favpress_tgm_ac_fafpress_check()
-    {
+    function favpress_tgm_ac_fafpress_check() {
         if (defined('FAVPRESS_VERSION') and class_exists('TGM_Plugin_Activation')) {
             foreach (TGM_Plugin_Activation::$instance->plugins as $key => &$plugin) {
                 if ($plugin['name'] === 'FavPress Framework Plugin') {
@@ -58,8 +55,7 @@ if (!function_exists('favpress_tgm_ac_fafpress_check')) {
 add_action('wp_ajax_favpress_ajax_wrapper', 'favpress_ajax_wrapper');
 
 if (!function_exists('favpress_ajax_wrapper')) {
-    function favpress_ajax_wrapper()
-    {
+    function favpress_ajax_wrapper() {
         $function = $_POST['func'];
         $params = $_POST['params'];
 
@@ -99,9 +95,8 @@ add_action('current_screen', 'favpress_sg_init_buttons');
 add_filter('clean_url', 'favpress_ace_script_attributes', 10, 1);
 
 if (!function_exists('favpress_ace_script_attributes')) {
-    function favpress_ace_script_attributes($url)
-    {
-        if (FALSE === strpos($url, 'ace.js'))
+    function favpress_ace_script_attributes($url) {
+        if (false === strpos($url, 'ace.js'))
             return $url;
 
         return "$url' charset='utf8";
@@ -109,8 +104,7 @@ if (!function_exists('favpress_ace_script_attributes')) {
 }
 
 if (!function_exists('favpress_metabox_enqueue')) {
-    function favpress_metabox_enqueue()
-    {
+    function favpress_metabox_enqueue() {
         if (FavPress_WP_Admin::is_post_or_page() and FavPress_Metabox::pool_can_output()) {
             $loader = FavPress_WP_Loader::instance();
             $loader->add_main_js('favpress-metabox');
@@ -120,8 +114,7 @@ if (!function_exists('favpress_metabox_enqueue')) {
 }
 
 if (!function_exists('favpress_sg_enqueue')) {
-    function favpress_sg_enqueue()
-    {
+    function favpress_sg_enqueue() {
         if (FavPress_ShortcodeGenerator::pool_can_output()) {
             // enqueue dummy js
             $localize = FavPress_ShortcodeGenerator::build_localize();
@@ -139,8 +132,7 @@ if (!function_exists('favpress_sg_enqueue')) {
 add_action('admin_footer', 'favpress_post_dummy_editor');
 
 if (!function_exists('favpress_post_dummy_editor')) {
-    function favpress_post_dummy_editor()
-    {
+    function favpress_post_dummy_editor() {
         /**
          * If we're in post edit page, and the post type doesn't support `editor`
          * we need to echo out a dummy editor to load all necessary js and css
@@ -172,8 +164,7 @@ if (!function_exists('favpress_post_dummy_editor')) {
 }
 
 if (!function_exists('favpress_sg_init_buttons')) {
-    function favpress_sg_init_buttons()
-    {
+    function favpress_sg_init_buttons() {
         if (FavPress_ShortcodeGenerator::pool_can_output()) {
             FavPress_ShortcodeGenerator::init_buttons();
         }
@@ -181,8 +172,7 @@ if (!function_exists('favpress_sg_init_buttons')) {
 }
 
 if (!function_exists('favpress_enqueue_scripts')) {
-    function favpress_enqueue_scripts()
-    {
+    function favpress_enqueue_scripts() {
         $loader = FavPress_WP_Loader::instance();
         $loader->build();
     }
@@ -199,8 +189,7 @@ if (!function_exists('favpress_enqueue_scripts')) {
  */
 
 if (!function_exists('favpress_metabox')) {
-    function favpress_metabox($key, $default = null, $post_id = null)
-    {
+    function favpress_metabox($key, $default = null, $post_id = null) {
         global $post;
 
         $favpress_metaboxes = FavPress_Metabox::get_pool();
@@ -214,7 +203,7 @@ if (!function_exists('favpress_metabox')) {
             return $default;
 
         $keys = explode('.', $key);
-        $temp = NULL;
+        $temp = null;
 
         foreach ($keys as $idx => $key) {
             if ($idx == 0) {
@@ -255,8 +244,7 @@ if (!function_exists('favpress_option')) {
      *
      * @return null|string
      */
-    function favpress_option($key, $default = null)
-    {
+    function favpress_option($key, $default = null) {
         $value = null;
 
         // Get option value.
@@ -321,9 +309,18 @@ if (!function_exists('favpress_option')) {
     }
 }
 
+// Allow getting options using filters
+add_filter('favpress_option', 'favpress_get_option', 10, 2);
+/**
+ * @see favpress_option()
+ */
+function favpress_get_option($default, $key) {
+    return favpress_option($key, $default);
+}
+
 // Allow loading of Metaboxes without the need to check for FavPress
 add_action('after_setup_theme', 'favpress_add_metaboxes', 20);
 
-function favpress_add_metaboxes(){
+function favpress_add_metaboxes() {
     do_action('favpress_add_metaboxes');
 }
