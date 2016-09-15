@@ -2,3 +2,16 @@
 layout: default
 title: Support
 ---
+
+<h2>Community Support (preferred)</h2>
+{% capture body_content %}
+### Source
+
+**Title:** {{page.title}}
+**URL:** {{page.url}}
+{% endcapture %}
+Use the <a href="https://github.com/moewe-io/favpress.com/issues/new?labels[]=question&labels[]=documentation&body={{ body_content | lstrip | rstrip | cgi_escape }}"
+           class="aui-button" target="_blank" resolved="">Ask a question</a> button.
+
+<h2>Paid Support</h2>
+If you need custom development, new features or faster changes for FavPress, you may <a href="https://www.moewe.io/en/contact/">contact us</a> for a quote.
