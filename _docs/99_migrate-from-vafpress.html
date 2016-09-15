@@ -1,0 +1,42 @@
+---
+layout: docs
+title:  "Migrate from Vafpress"
+---
+<h2>Steps</h2>
+Replacing Vafpress with FavPress is easy.
+<ol>
+    <li><a href="01_getting-started.html">Depend</a> on FavPress instead Vafpress</li>
+    <li>Replace the old prefix <code>vp</code> used by Vafpress
+        with <code>favpress</code>.
+    </li>
+    <li>Replace the old prefix <code>VP</code> used by Vafpress
+        with <code>FavPress</code>.
+    </li>
+</ol>
+
+<h2>Example</h2>
+
+<h3>Old Vafpress code</h3>
+
+<pre><code class="php">
+    $theme_options = new VP_Option(array(
+        ...
+    ));
+
+    $option = vp_option('option');
+    $metabox = vp_metabox('metabox');
+
+</code></pre>
+
+<h3>New FavPress code</h3>
+
+
+<pre><code class="php">
+    $theme_options = new FavPress_Option(array(
+        ...
+    ));
+
+    $option = favpress_option('option');
+    $metabox = favpress_metabox('metabox');
+
+</code></pre>

@@ -1,0 +1,26 @@
+<html lang="en">
+
+{% include head.html %}
+
+<body class="{% if page.design %}{{ page.design | escape }}{% else %}{{ site.design | escape }}{% endif %}">
+	<div id="page">
+      
+{{page.design}}      
+      
+	{% include header.html %}
+	
+		<section id="content" role="main">
+	  
+			{% include title.html %}
+			
+			<div class="aui-page-panel aui-intro-page">
+        
+				{{ content }}
+        
+				{% include footer.html %}
+				
+			</div>		
+		</section>
+    </div>
+</body>
+</html>

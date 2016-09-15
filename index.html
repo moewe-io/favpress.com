@@ -1,0 +1,103 @@
+---
+layout: landing-page
+title: FavPress
+---
+
+<header class="aui-page-header">
+    <div class="aui-page-header-inner">
+        <div class="aui-page-header-main intro-header">
+            <h1><i class="fa fa-heart" aria-hidden="true"></i> FavPress Framework Plugin</h1>
+            <p class="subtitle">FavPress is an option and metabox framework plugin for WordPress.
+            </p>
+            <a class="aui-button aui-button-primary" href="/docs/10_getting-started.html">Get started</a>
+            <a class="aui-button " href="/docs/99_migrate-from-vafpress.html">Migrate from Vafpress</a>
+        </div>
+    </div>
+</header>
+<div class="aui-page-panel">
+    <div class="aui-page-panel-inner">
+        <section class="aui-page-panel-content">
+            <div class="aui-group">
+                <div class="aui-item">
+                    <h2>Major Features</h2>
+                    <ul>
+                        <li>Theme/Plugin Options Builder</li>
+                        <li>Metaboxes Builder with a lot of useful fields</li>
+                        <li>Shortcode Generator Builder</li>
+                        <li>Extensible and flexible</li>
+                        <li>Easy to use</li>
+                    </ul>
+                </div>
+                <div class="aui-item">
+                    <h2>Documentation</h2>
+                    <ul>
+                        {% for doc in site.docs %}
+                        <li><a class="page-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <p>
+                        <a class="aui-button" href="/docs/10_getting-started.html">See full documentation</a>
+                    </p>
+                </div>
+            </div>
+            <div class="aui-group">
+                <div class="aui-item">
+                    <h2>Contribute</h2>
+                    <p>You can help to improve FavPress in multiple ways:</p>
+                    <ul>
+                        <li>Contribute to the FavPress <a href="https://github.com/moewe-io/favpress.com">code
+                            base.</a></li>
+                        <li><a href="https://github.com/moewe-io/favpress.com/issues">Report</a> issues and help
+                            others within the issues section.
+                        </li>
+                        <li>Spread the word.</li>
+                        <li>Help us translate the core.</li>
+                        <li>Develop plugins using the framework.</li>
+                        <li>Fund us through <a
+                                href="https://codecanyon.net/user/scrobbleme/portfolio?ref=scrobbleme">buying our
+                            plugins.</a></li>
+                    </ul>
+                </div>
+                <div class="aui-item">
+                    <h2>Real World Examples</h2>
+                    <p>The following plugins and themes are using Favpress</p>
+                    <ul>
+                        <li><a
+                                href="https://codecanyon.net/item/allinone-custom-background-for-wordpress/9186191?ref=scrobbleme">All-in-One
+                            Custom Background </a></li>
+                        <li><a
+                                href="https://codecanyon.net/item/before-after-imagecontent-slider-for-wordpress/6503930?ref=scrobbleme">Before
+                            After Image/Content Slider</a></li>
+                        </li>
+                    </ul>
+                    <p>
+                        <a class="aui-button" href="examples.html">See more examples</a>
+                    </p>
+                </div>
+            </div>
+            <div class="aui-group">
+                <div class="aui-item">
+                    <h2>Initial Motivation and Goals</h2>
+                    <p>FavPress started as a hard copy of <a href="https://github.com/vafour/vafpress-framework">Vafpress</a>,
+                        which was abandoned by their original developers.</p>
+                    <p>Our inital goals are:</p>
+                    <ul>
+                        <li>Create a stable and up to date version of the original Vafpress.</li>
+                        <li>Only one version, no freemium or premium version. Everyone should be able to use the
+                            framework without thinking about.
+                        </li>
+                        <li>For developers. We want a basic framework developers can easily use. Just basic
+                            features,
+                            not too fancy stuff or too many features.
+                        </li>
+                        <li>Use of WordPress core features as much as possible and just make them easier to use.
+                        </li>
+                    </ul>
+                </div>
+                <div class="aui-item">
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

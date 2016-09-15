@@ -1,0 +1,31 @@
+<header id="header" role="banner">
+    <nav class="aui-header aui-dropdown2-trigger-group" role="navigation" data-aui-responsive="true">
+        <div class="aui-header-inner">
+            <div class="aui-header-primary">
+                <h1 id="logo" class="aui-header-logo aui-header-logo-textonly">
+                    <a href="../"><span class="aui-header-logo-device">FavPress</span></a>
+                </h1>
+
+                <ul resolved="" class="aui-nav __skate" style="width: auto;">
+                    <li><a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+                    </li>
+                    <li><a href="#docs-dropdown-menu" aria-owns="docs-dropdown-menu" aria-haspopup="true"
+                           class="aui-dropdown2-trigger">Documentation</a></li>
+                    <li><a class="page-link" href="{{ site.baseurl }}/faq.html">FAQ</a>
+                    </li>
+                    <li><a class="page-link" href="{{ site.baseurl }}/support.html">Support</a></li>
+                    <li><a class="post-link" href="/license.html">License</a></li>
+                    <li><a class="post-link" href="/changelog.html">Changelog</a></li>
+                </ul>
+            </div>
+            <div id="docs-dropdown-menu" class="aui-style-default aui-dropdown2">
+                <ul class="aui-list-truncate">
+                    {% for doc in site.docs %}
+                    <li><a class="page-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

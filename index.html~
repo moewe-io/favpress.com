@@ -1,0 +1,146 @@
+---
+layout: default
+title: Wilkommen!
+---
+
+<div class="aui-page-panel-inner">
+                        <section class="aui-page-panel-item">
+                            <div class="aui-group flatpack-intro">
+                                <div class="aui-item">
+                                    <a href="https://bitbucket.org/atlassian/aui" target="_blank" class="introblob">
+                                      <img src="docs/images/places-21.png" alt="rocket ship">
+                                    </a>
+                                    <h3 id="getting-started">Getting started</h3>
+                                    <p>Most Atlassian products have AUI installed as a plugin. The flat pack is great for
+                                        prototyping or deploying in apps which can't load a plugin.
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            <a href="https://bitbucket.org/atlassian/aui" target="_blank">AUI repository on Bitbucket</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="aui-item">
+                                    <a href="docs" class="introblob">
+                                      <img src="docs/images/places-19.png" alt="reading lamp">
+                                    </a>
+                                    <h3>Documentation</h3>
+                                    <p>AUI provides JavaScript, CSS and Soy templates (or markup patterns) for a range of ready-made UI components.</p>
+                                    <ul>
+                                        <li><a href="docs">API documentation</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="aui-group custom-item-group">
+                                <div class="aui-item custom-item hero-cdn">
+                                    <h2>Serve from CDN</h2>
+                                    <p>Using the CDN will make your pages load faster and resources won't be out of date.</p>
+                                    <p>
+                                        <button resolved="" id="cdn-button" class="aui-button aui-button-light">Serve from CDN</button>
+                                    </p>
+                                    <section id="cdn-dialog" aria-labelledby="cdn-dialog-dialog-title" role="dialog" class=" aui-layer aui-dialog2 aui-dialog2-xlarge" aria-hidden="true">
+                                        <header class="aui-dialog2-header">
+                                            <h2 class="aui-dialog2-header-main">Using AUI from CDN</h2>
+                                            <a class="aui-dialog2-header-close"><span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span></a>
+                                        </header>
+                                        <div class="aui-dialog2-content">
+                                            <h3>Core</h3>
+                                            <p>Note that AUI supports jQuery 1.7.2 and 1.8.3 - alter the below jQuery script as
+                                                required.
+                                            </p>
+                                            <p>To use core AUI components, include the following CSS and JS in your HTML:</p>
+                                            <div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//aui-cdn.atlassian.com/aui-adg/5.9.19/css/aui.min.css"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"all"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/html">
+                                                <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.19/css/aui.min.css" media="all">
+                                                <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+                                                <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui.min.js"></script>
+                                            </noscript>
+
+                                            <p>To use additional components, include the following resources:</p>
+                                            <h3>Date picker</h3>
+                                            <div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-datepicker.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/html">
+                                                <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-datepicker.min.js"></script>
+                                            </noscript>
+
+                                            <h3>Experimental components</h3>
+                                            <p>
+                                                Previously, some Experimental components required an AMD loader to be present on the page
+                                                before the Experimental resource was included.  As of AUI 5.9, this is no longer required
+                                                as most components are exposed on the global AJS object and markup-initialized components
+                                                do not need to have their modules loaded with AMD. However, an AMD loader may still be used
+                                                to obtain a reference to the component's JavaScript export (often a constructor).
+                                            </p>
+                                            <div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"//aui-cdn.atlassian.com/aui-adg/5.9.19/css/aui-experimental.min.css"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"all"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-experimental.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/html">
+                                                <link rel="stylesheet" href="//aui-cdn.atlassian.com/aui-adg/5.9.19/css/aui-experimental.min.css" media="all">
+                                                <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-experimental.min.js"></script>
+                                            </noscript>
+
+                                            <h3>Javascript Soy templates</h3>
+                                            <div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-soy.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/html">
+                                                <script src="//aui-cdn.atlassian.com/aui-adg/5.9.19/js/aui-soy.min.js"></script>
+                                            </noscript>
+                                        </div>
+                                        <footer class="aui-dialog2-footer">
+                                            <div class="aui-dialog2-footer-actions">
+                                                <button resolved="" id="cdn-dialog-close" class="aui-button">Close</button>
+                                            </div>
+                                        </footer>
+                                    </section>
+                                </div>
+                                <div class="aui-item custom-item hero-flatpack">
+                                    <h2>Download AUI</h2>
+                                    <p>Download the static files and bundle it in your project like any other resources.</p>
+                                    <p>
+                                        <button resolved="" id="download-flatpack-link" class="aui-button aui-button-light">Download AUI
+                                        </button>
+                                    </p>
+                                    <section id="download-dialog" aria-labelledby="download-dialog-dialog-title" role="dialog" class=" aui-layer aui-dialog2 aui-dialog2-xlarge" aria-hidden="true">
+                                        <header class="aui-dialog2-header">
+                                            <h2 class="aui-dialog2-header-main">Download AUI</h2>
+                                            <a class="aui-dialog2-header-close"><span class="aui-icon aui-icon-small aui-iconfont-close-dialog">Close</span></a>
+                                        </header>
+                                        <div class="aui-dialog2-content">
+                                            <h2>What's included?</h2>
+                                            <p>This zip file contains both core/stable components from AUI, plus some components
+                                                with experimental APIs (in separate resources).
+                                            </p>
+                                            <p><a href="https://bitbucket.org/atlassian/aui-adg-dist/get/5.9.19.zip">Download
+                                                AUI</a></p>
+                                            <h2>How to load AUI</h2>
+                                            <p>If you want everything including AUI's dependencies, Experimental features and
+                                                compiled-JS Soy templates, add this to the HEAD of your templates or page:
+                                            </p>
+                                            <p>
+                                                <div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"aui/css/aui.min.css"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"all"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"aui/css/aui-experimental.min.css"</span> <span class="hljs-attr">media</span>=<span class="hljs-string">"all"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"aui/js/aui.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"aui/js/aui-experimental.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"aui/js/aui-soy.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/html">
+                                                    <link rel="stylesheet" href="aui/css/aui.min.css" media="all">
+                                                    <link rel="stylesheet" href="aui/css/aui-experimental.min.css" media="all">
+                                                    <script src="aui/js/aui.min.js"></script>
+                                                    <script src="aui/js/aui-experimental.min.js"></script>
+                                                    <script src="aui/js/aui-soy.min.js"></script>
+                                                </noscript>
+                                            </p>
+                                            <p>...remembering to update the path to point to the location of your copy. This is
+                                                the recommended/default option.
+                                            </p>
+                                        </div>
+                                        <footer class="aui-dialog2-footer">
+                                            <div class="aui-dialog2-footer-actions">
+                                                <button resolved="" id="download-dialog-close" class="aui-button">Close</button>
+                                            </div>
+                                        </footer>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+                    </div>

@@ -1,0 +1,67 @@
+---
+layout: docs
+title: "Getting Started"
+---
+<h2>Introduction</h2>
+FavPress is provided as additional plugin and should be added as dependency to your theme or plugin.
+
+<h2>Installation</h2>
+<h3>Download TMG Plugin Activation</h3>
+
+Using <a href="http://tgmpluginactivation.com">TGM Plugin
+    Activation</a> you can easily depend on other plugins within your own theme or plugin.
+
+<ol>
+    <li><a class="aui-button" href="https://api.github.com/repos/TGMPA/TGM-Plugin-Activation/zipball/2.6.1">Download
+        latest version</a></li>
+    <li>Extract the ZIP</li>
+    <li>Copy the file <code>class-tgm-plugin-activation.php</code> into your theme or plugin</li>
+</ol>
+
+<h3>Configure TGM and add FavPress as dependency</h3>
+
+Add the following code into your <code>functions.php</code>:
+
+<pre><code class="php">
+    require_once 'class-tgm-plugin-activation.php';
+
+    add_action('tgmpa_register','my_prefix_register_required_plugins'));
+
+    function my_prefix_register_required_plugins(){
+        $plugins = array(
+            array(
+                'name'     => 'FavPress',
+                'slug'     => 'favpress',
+                'source'   => 'https://apps.moewe.io/favpress/stable/favpress.zip',
+                'required' => true
+            ),
+        );
+
+        $config = array(
+            'id'           => 'my_prefix-tgm',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+            'default_path' => '',
+            'menu'         => 'tgmpa-install-plugins',
+            'parent_slug'  => 'themes.php',
+            'capability'   => 'edit_theme_options',
+            'has_notices'  => true,
+            'dismissable'  => true,
+            'dismiss_msg'  => '',
+            'is_automatic' => true,
+            'message'      => ''
+        );
+        tgmpa($plugins, $config);
+    }
+
+</code></pre>
+<p>
+    <span class="aui-lozenge aui-lozenge-current">Note:</span> Please replace <code>my_prefix</code> with your own.
+</p>
+
+<h2>What's next?</h2>
+
+Start using FavPress building
+<ul>
+    <li><a href="20_metaboxes.html">Metaboxes</a>,</li>
+    <li><a href="30_option_pages.html">Options pages</a> or</li>
+    <li><a href="40_fields_and_controls.html">Shortcode generators</a>.</li>
+</ul>

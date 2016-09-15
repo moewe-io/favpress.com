@@ -1,0 +1,39 @@
+# Site settings
+title: FavPress
+email: contact@moewe.io
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://favpress.com" # the base hostname & protocol for your site
+twitter_username: favpress
+github_username:  favpress
+
+# Build settings
+markdown: kramdown
+
+#page layout options:
+#    Default: (no class required)
+#    Fixed: aui-page-fixed
+#    Hybrid: aui-page-hybrid
+#    Focused: aui-page-focused - note you also need to set the size
+#    Notification: aui-page-notification - note you also need to set the size
+design: " "
+
+# Collections
+# https://jekyllrb.com/docs/collections/
+collections:
+ docs:
+  output: true
+ faqs:
+  output: false
+ changes:
+  output: false
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      menu: "menu-default.html"

@@ -1,0 +1,43 @@
+---
+---
+<html lang="en">
+
+{% include head.html %}
+
+<body class="{% if page.design %}{{ page.design | escape }}{% else %}{{ site.design | escape }}{% endif %}">
+<div id="page">
+
+    {% include header.html %}
+
+    <section id="content" role="main">
+        <div class="aui-page-panel">
+            <div class="aui-page-panel-inner">
+                <div class="aui-page-panel-nav">
+                    {% include {{page.menu}} %}
+                </div>
+                <section class="aui-page-panel-content">
+                    <div class="component-heading">
+                        <h1>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif
+                            %} </h1>
+                        {% capture body_content %}
+### Source
+
+**Title:** {{page.title}}
+**URL:** {{page.url}}
+                        {% endcapture %}
+                        <a href="https://github.com/moewe-io/favpress.com/issues/new?labels[]=question&labels[]=documentation&body={{ body_content | lstrip | rstrip | cgi_escape }}"
+                           class="aui-button" target="_blank" resolved="">Ask a question</a>
+                    </div>
+                    <aside id="contents"></aside>
+                    <div class="toc-content">
+                    {{ content }}
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    {% include footer.html %}
+</div>
+{% include scripts.html %}
+</body>
+</html>

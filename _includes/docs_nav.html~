@@ -1,0 +1,24 @@
+                        <div class="aui-page-panel-nav">
+                            <nav class="aui-navgroup aui-navgroup-vertical">
+                                <div class="aui-navgroup-inner">
+                                    <div class="aui-nav-heading">
+                                        <strong>docs-folder</strong>
+                                    </div>
+                                    <ul resolved="" class="aui-nav">
+                                    	    {% for doc in site.docs %}
+      <li>
+          <a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+      </li>
+    {% endfor %}
+                                    </ul>
+                                    <div class="aui-nav-heading">
+                                        <strong>Concepts</strong>
+                                    </div>
+                                    <ul resolved="" class="aui-nav">
+                                        <li><a href="helper.html" class="docs-nav-link" id="helper-link">Helper functions</a></li>
+                                        <li><a href="mobile.html" class="docs-nav-link" id="mobile-link">Mobile <span class="aui-lozenge aui-lozenge-current">experimental</span></a></li>
+                                        <li><a href="soy.html" class="docs-nav-link" id="soy-link">Soy <span class="aui-lozenge aui-lozenge-current">experimental</span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>

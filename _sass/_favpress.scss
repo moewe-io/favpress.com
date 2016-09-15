@@ -1,0 +1,87 @@
+#footer-logo a, #footer .footer-body {
+  background: none;
+}
+
+#moewe-footer-logo {
+  img {
+    width: 150px;
+  }
+}
+
+.fa-heart {
+  color: red;
+}
+
+.intro-header {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  text-align: center;
+  .subtitle {
+    padding-bottom: 20px;
+  }
+}
+
+.fa-large-and-centered {
+  text-align: center;
+  font-size: 4em;
+}
+
+.aui-page-panel-content {
+  .component-heading {
+    margin-bottom: 10px;
+    h1 {
+      display: inline-block;
+      line-height: 1em;
+      margin-right: 20px;
+    }
+    a {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+  .aui-group {
+    padding-bottom: 30px;
+  }
+  h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.aui-page-panel {
+  margin-top: 0;
+}
+
+#contents {
+  display: inline-block;
+  > ol {
+    margin-top: 10px;
+  }
+  ol {
+    counter-reset: section;
+    list-style-type: none;
+  }
+
+  li:before {
+    counter-increment: section;
+    content: counters(section, '.') '. ';
+  }
+
+  > ol {
+    background: #F5F5f5;
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+code {
+  background-color: #F0F0F0;
+}
+

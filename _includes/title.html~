@@ -1,0 +1,12 @@
+<header class="aui-page-header">
+                    <div class="aui-page-header-inner">
+                        <div class="aui-page-header-main intro-header">
+                            <h1 id="indexheader">
+										{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}                            
+                            </h1><span id="header-version" class="aui-lozenge aui-lozenge-success">5.9.19</span></h1>
+                            <p class="subtitle">AUI is a tailor-made frontend library for creating a user interface according to
+                                the Atlassian Design Guidelines.
+                            </p>
+                        </div>
+                    </div>
+                </header>

@@ -1,0 +1,11 @@
+---
+design: aui-page-fixed
+layout: default
+---
+
+	  <div class="aui-page-panel-inner">
+		{% include docs_nav.html %}
+	   <section class="aui-page-panel-content">
+	       {{ content }}
+	   </section>
+	  </div>

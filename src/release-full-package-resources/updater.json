@@ -1,9 +1,0 @@
-{
-  "name": "__PRODUCT_TITLE__",
-  "version": "__PRODUCT_VERSION__",
-  "author": "__AUTHOR_NAME__",
-  "download_url": "__UPDATER_BASE_PATH__/__PRODUCT_SLUG__.zip",
-  "sections": {
-    "description": "__PRODUCT_DESCRIPTION__"
-  }
-}

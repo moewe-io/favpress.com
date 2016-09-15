@@ -1,0 +1,26 @@
+
+<nav class="aui-navgroup aui-navgroup-vertical">
+    <div class="aui-navgroup-inner">
+        <div class="aui-nav-heading">
+            <strong>Documentation</strong>
+        </div>
+        <ul resolved="" class="aui-nav">
+            {% for doc in site.docs %}
+            <li>
+                <a class="post-link" href="{{ doc.url | prepend: site.baseurl }}">{{ doc.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="aui-nav-heading">
+            <strong>Other</strong>
+        </div>
+        <ul resolved="" class="aui-nav">
+            <li>
+                <a class="post-link" href="/faq.html">FAQ</a>
+                <a class="post-link" href="/support.html">Support</a>
+                <a class="post-link" href="/license.html">License</a>
+                <a class="post-link" href="/changelog.html">Changelog</a>
+            </li>
+        </ul>
+    </div>
+</nav>

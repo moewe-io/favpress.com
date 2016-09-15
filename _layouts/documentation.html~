@@ -1,0 +1,294 @@
+---
+layout: default
+---
+
+<div class="aui-page-panel">
+                    <div class="aui-page-panel-inner">
+								{% include docs_nav.html %}
+                        <section class="aui-page-panel-content">
+                            <h2 class="component-heading">Page</h2>
+                            <a resolved="" href="https://answers.atlassian.com/questions/ask?topics=aui,aui-docs,aui-5.9.19,Page" class="aui-button aui-button-link docs-meta-link" target="_blank">Ask a question</a>
+                            
+<a resolved="" href="https://design.atlassian.com/latest/product/foundations/layout/" class="aui-button aui-button-link docs-meta-link">Design guidelines</a>
+
+<h3>Summary</h3>
+<p>Common markup to produce an Atlassian standard page layout and base design.</p>
+<p>This is an "outside-in" type of component aiming to provide a standardised page, intended for use with the full set of application header, navigation, page header, footer, etc. The content area has a preset layout system for common layout variations.
+    There are several overall page layout options (full width, fixed width, etc).</p>
+
+<h3>Status</h3>
+<table class="aui summary">
+    <tbody>
+        <tr>
+            <th>API status:</th>
+            <td><span class="aui-lozenge aui-lozenge-success">general</span>
+            </td>
+        </tr>
+        <tr>
+            <th>Included in AUI core?</th>
+            <td>Yes. You do not need to explicitly require the web resource key.</td>
+        </tr>
+        <tr>
+            <th>Web resource key:</th>
+            <td class="resource-key" data-resource-key="com.atlassian.auiplugin:aui-page-layout"><code>com.atlassian.auiplugin:aui-page-layout</code>
+            </td>
+        </tr>
+        <tr>
+            <th>AMD Module key:</th>
+            <td class="resource-key">N/A</td>
+        </tr>
+        <tr>
+            <th>Experimental since:</th>
+            <td>3.6</td>
+        </tr>
+        <tr>
+            <th>General API status:</th>
+            <td>5.1</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Examples</h3>
+<p>The page you are looking at uses AUI Page. The overall layout options are:</p>
+<p>
+    </p><table>
+        <tbody><tr>
+            <th>default (full width)</th>
+            <th>fixed width</th>
+            <th>hybrid <br>(full width header, fixed width content)</th>
+            <th>focused task page</th>
+            <th>notification task page</th>
+        </tr>
+        <tr>
+            <td><img src="images/example-layout-fluid.png" alt="Illustration of fluid page." height="130" width="150"></td>
+            <td><img src="images/example-layout-fixed.png" alt="Illustration of fixed width page." height="130" width="150"></td>
+            <td align="center"><img src="images/example-layout-hybrid.png" alt="Illustration of hybrid page." height="130" width="150"></td>
+            <td><img src="images/example-layout-focusedtask.png" alt="Illustration of focused task page." height="130" width="150"></td>
+            <td><img src="images/example-layout-notification.png" alt="Illustration of notification task page." height="130" width="150"></td>
+        </tr>
+    </tbody></table>
+<p></p>
+
+<h3>Code</h3>
+<h4>HTML</h4>
+<p>This is a markup-based component, however to enable HTML5 in older browsers you will need to include the HTML5 Shim.</p>
+<p>To set the page type, apply one of the following classes to the <code>&lt;body&gt;</code> tag:</p>
+<ul>
+    <li>Default: (no class required)</li>
+    <li>Fixed: <code>aui-page-fixed</code>
+    </li>
+    <li>Hybrid: <code>aui-page-hybrid</code>
+    </li>
+    <li>Focused: <code>aui-page-focused</code> - note you also need to set the size</li>
+    <li>Notification: <code>aui-page-notification</code> - note you also need to set the size</li>
+</ul>
+<p>Page sizes for focused and notification pages are:</p>
+<ul>
+    <li><code>aui-page-size-small</code>
+    </li>
+    <li><code>aui-page-size-medium</code>
+    </li>
+    <li><code>aui-page-size-large</code>
+    </li>
+    <li><code>aui-page-size-xlarge</code> (default)</li>
+</ul>
+<p>Deprecated focused size classes are:</p>
+<ul>
+    <li><code>aui-page-focused-small</code>
+    </li>
+    <li><code>aui-page-focused-medium</code>
+    </li>
+    <li><code>aui-page-focused-large</code>
+    </li>
+    <li><code>aui-page-focused-xlarge</code> (default)</li>
+</ul>
+
+<div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span> /&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=EDGE"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>AUI - Default Page<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;<span class="hljs-name">body</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-page-focused aui-page-size-large"</span>&gt;</span><span class="hljs-comment">&lt;!-- For a normal page, omit all 'aui-page-' classes here --&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"page"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">      <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"header"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"banner"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-header aui-dropdown2-trigger-group"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"navigation"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-header-inner"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-header-primary"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;<span class="hljs-name">h1</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"logo"</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-header-logo aui-header-logo-aui"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-header-logo-device"</span>&gt;</span>AUI<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-nav"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/"</span>&gt;</span>Nav<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">      <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">      <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"content"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"main"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;<span class="hljs-name">header</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-page-header"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-page-header-inner"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-page-header-main"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Default page layout<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;/<span class="hljs-name">header</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-navgroup aui-navgroup-horizontal"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-navgroup-inner"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-navgroup-primary"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-nav"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com"</span>&gt;</span>Nav item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-navgroup-secondary"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-nav"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://example.com/"</span>&gt;</span>Nav item<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-page-panel"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-page-panel-inner"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"aui-page-panel-content"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>Page content heading<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">              <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae diam in arcu ultricies gravida sed sed nisl. Curabitur nibh nulla, semper non pharetra eu, suscipit vitae eros. Donec eget lectus elit. Etiam metus diam, adipiscing convallis blandit sit amet, sollicitudin sit amet felis. Phasellus justo elit, rhoncus sed tincidunt a, auctor sit amet turpis. Praesent turpis lectus, aliquet vitae sollicitudin ac, convallis vitae urna. Donec consectetur lacus a lacus tincidunt at varius felis venenatis. Pellentesque dapibus mattis arcu, a vestibulum lacus congue at.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">      <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">      <span class="hljs-tag">&lt;<span class="hljs-name">footer</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"footer"</span> <span class="hljs-attr">role</span>=<span class="hljs-string">"contentinfo"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"footer-body"</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>I &amp;hearts; AUI<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"footer-logo"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://www.atlassian.com/"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_blank"</span>&gt;</span>Atlassian<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">        <span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">      <span class="hljs-tag">&lt;/<span class="hljs-name">footer</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code>
+<code class="aui-docs-code-line-content">    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></code>
+<code class="aui-docs-code-line-content"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/html">
+    <html lang="en">
+        <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+        <title>AUI - Default Page</title>
+        </head>
+        <body class="aui-page-focused aui-page-size-large"><!-- For a normal page, omit all 'aui-page-' classes here -->
+        <div id="page">
+          <header id="header" role="banner">
+            <nav class="aui-header aui-dropdown2-trigger-group" role="navigation">
+              <div class="aui-header-inner">
+                <div class="aui-header-primary">
+                  <h1 id="logo" class="aui-header-logo aui-header-logo-aui"><a href="http://example.com/"><span class="aui-header-logo-device">AUI</span></a></h1>
+                  <ul class="aui-nav">
+                    <li><a href="http://example.com/">Nav</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <section id="content" role="main">
+            <header class="aui-page-header">
+              <div class="aui-page-header-inner">
+                <div class="aui-page-header-main">
+                  <h1>Default page layout</h1>
+                </div>
+              </div>
+            </header>
+            <nav class="aui-navgroup aui-navgroup-horizontal">
+              <div class="aui-navgroup-inner">
+                <div class="aui-navgroup-primary">
+                  <ul class="aui-nav">
+                    <li><a href="http://example.com">Nav item</a></li>
+                  </ul>
+                </div>
+                <div class="aui-navgroup-secondary">
+                  <ul class="aui-nav">
+                    <li><a href="http://example.com/">Nav item</a></li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <div class="aui-page-panel">
+              <div class="aui-page-panel-inner">
+                <section class="aui-page-panel-content">
+                  <h2>Page content heading</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vitae diam in arcu ultricies gravida sed sed nisl. Curabitur nibh nulla, semper non pharetra eu, suscipit vitae eros. Donec eget lectus elit. Etiam metus diam, adipiscing convallis blandit sit amet, sollicitudin sit amet felis. Phasellus justo elit, rhoncus sed tincidunt a, auctor sit amet turpis. Praesent turpis lectus, aliquet vitae sollicitudin ac, convallis vitae urna. Donec consectetur lacus a lacus tincidunt at varius felis venenatis. Pellentesque dapibus mattis arcu, a vestibulum lacus congue at.</p>
+                </section>
+              </div>
+            </div>
+          </section>
+          <footer id="footer" role="contentinfo">
+            <section class="footer-body">
+              <ul>
+                <li>I &hearts; AUI</li>
+              </ul>
+              <div id="footer-logo"><a href="http://www.atlassian.com/" target="_blank">Atlassian</a></div>
+            </section>
+          </footer>
+        </div>
+        </body>
+    </html>
+</noscript><!--/ aui-docs-code-->
+
+<h4>Soy</h4>
+<p>To construct a full document with soy, you will need to call document and page; then usually fill in other templates such as header, page panel etc or use literal content:</p>
+<div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="xml">{template .index}</span></code>
+<code class="aui-docs-code-line-content">    <span class="xml">{call aui.page.document}</span></code>
+<code class="aui-docs-code-line-content">        <span class="xml">{param windowTitle: 'Window title text' /}</span></code>
+<code class="aui-docs-code-line-content">        <span class="xml">{param headContent}</span></code>
+<code class="aui-docs-code-line-content">            <span class="xml"><span class="hljs-comment">&lt;!-- HEAD content such as CSS and JS resources --&gt;</span></span></code>
+<code class="aui-docs-code-line-content">        <span class="xml">{/param}</span></code>
+<code class="aui-docs-code-line-content">        <span class="xml">{param content}</span></code>
+<code class="aui-docs-code-line-content">            <span class="xml">{call aui.page.page}</span></code>
+<code class="aui-docs-code-line-content">                <span class="xml">{param headerContent}</span></code>
+<code class="aui-docs-code-line-content">                    <span class="xml"><span class="hljs-comment">&lt;!-- call aui.page.header here --&gt;</span></span></code>
+<code class="aui-docs-code-line-content">                <span class="xml">{/param}</span></code>
+<code class="aui-docs-code-line-content">                <span class="xml">{param contentContent}</span></code>
+<code class="aui-docs-code-line-content">                    <span class="xml"><span class="hljs-comment">&lt;!-- call aui.page.pagePanel here --&gt;</span></span></code>
+<code class="aui-docs-code-line-content">                <span class="xml">{/param}</span></code>
+<code class="aui-docs-code-line-content">                <span class="xml">{param footerContent}</span></code>
+<code class="aui-docs-code-line-content">                    <span class="xml"><span class="hljs-comment">&lt;!-- literal content here --&gt;</span></span></code>
+<code class="aui-docs-code-line-content">                <span class="xml">{/param}</span></code>
+<code class="aui-docs-code-line-content">            <span class="xml">{/call}</span></code>
+<code class="aui-docs-code-line-content">        <span class="xml">{/param}</span></code>
+<code class="aui-docs-code-line-content">    <span class="xml">{/call}</span></code>
+<code class="aui-docs-code-line-content"><span class="xml">{/template}</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/handlebars">
+    {template .index}
+        {call aui.page.document}
+            {param windowTitle: 'Window title text' /}
+            {param headContent}
+                <!-- HEAD content such as CSS and JS resources -->
+            {/param}
+            {param content}
+                {call aui.page.page}
+                    {param headerContent}
+                        <!-- call aui.page.header here -->
+                    {/param}
+                    {param contentContent}
+                        <!-- call aui.page.pagePanel here -->
+                    {/param}
+                    {param footerContent}
+                        <!-- literal content here -->
+                    {/param}
+                {/call}
+            {/param}
+        {/call}
+    {/template}
+</noscript>
+
+<p>To set the page layout in Soy, use the pageType param:</p>
+<div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="xml">* @param? pageType Default: default (full width). Options: default, focused, notification, fixed, hybrid, generic (no class applied).</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/handlebars">
+    * @param? pageType Default: default (full width). Options: default, focused, notification, fixed, hybrid, generic (no class applied).
+</noscript>
+
+<p>If you need a small focused page, you can set the size with pageSize. focusedPageSize as been deprecated:</p>
+<div class="aui-code-block-wrapper"><aui-code-block><pre><code class="aui-docs-code-line-content"><span class="xml">* @param? pageSize Default: xlarge. Options: small, medium, large, xlarge.</span></code>
+</pre></aui-code-block></div><noscript resolved="" is="aui-docs-code" type="text/handlebars">
+    * @param? pageSize Default: xlarge. Options: small, medium, large, xlarge.
+</noscript>
+
+                        </section>
+                    </div>
+                </div>

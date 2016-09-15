@@ -1,0 +1,11 @@
+<footer id="footer" role="contentinfo">
+                <section class="footer-body">
+                    <ul id="aui-footer-list">
+                        <li>Copyright © 2009-2015 Atlassian</li>
+                        <li><a href="">License</a></li>
+                        <li><a href="">Changelog</a></li>
+                        <li>5.9.19</li>
+                    </ul>
+                    <div id="footer-logo"><a href="http://www.atlassian.com">Atlassian</a></div>
+                </section>
+            </footer>
