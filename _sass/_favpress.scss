@@ -60,6 +60,9 @@
   ol {
     counter-reset: section;
     list-style-type: none;
+    ol {
+      margin-top: 0;
+    }
   }
 
   li:before {

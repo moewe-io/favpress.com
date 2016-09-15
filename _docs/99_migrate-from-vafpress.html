@@ -2,10 +2,10 @@
 layout: docs
 title:  "Migrate from Vafpress"
 ---
-<h2>Steps</h2>
-Replacing Vafpress with FavPress is easy.
+<h2>Depend on FavPress</h2>
+<a href="01_getting-started.html">Depend</a> on FavPress instead Vafpress
+<h2>Replace prefixes</h2>
 <ol>
-    <li><a href="01_getting-started.html">Depend</a> on FavPress instead Vafpress</li>
     <li>Replace the old prefix <code>vp</code> used by Vafpress
         with <code>favpress</code>.
     </li>
@@ -14,9 +14,9 @@ Replacing Vafpress with FavPress is easy.
     </li>
 </ol>
 
-<h2>Example</h2>
+<h3>Example</h3>
 
-<h3>Old Vafpress code</h3>
+<strong>Old Vafpress code</strong>
 
 <pre><code class="php">
     $theme_options = new VP_Option(array(
@@ -27,8 +27,8 @@ Replacing Vafpress with FavPress is easy.
     $metabox = vp_metabox('metabox');
 
 </code></pre>
-
-<h3>New FavPress code</h3>
+<br />
+<strong>New FavPress code</strong>
 
 
 <pre><code class="php">
@@ -38,5 +38,35 @@ Replacing Vafpress with FavPress is easy.
 
     $option = favpress_option('option');
     $metabox = favpress_metabox('metabox');
+
+</code></pre>
+
+<h2>Set mode for metaboxes</h2>
+<p>
+    In FavPress we have changed the default mode for metaboxes from <code>WPALCHEMY_MODE_ARRAY</code> to <code>WPALCHEMY_MODE_EXTRACT</code>.
+</p>
+To keep your metaboxes compatible you should set the old mode explicitly:
+<pre><code class="php">
+
+    $mb = new FavPress_Metabox(array(
+        'mode'    => WPALCHEMY_MODE_ARRAY
+    ));
+
+</code></pre>
+
+
+<h2>Set mode for upload fields</h2>
+<p>
+    In FavPress we have changed the default behaviour for upload fields to store the uploads id instead the url.
+</p>
+To keep your fields compatible you should set the old mode explicitly:
+<pre><code class="php">
+
+    'fields' => array(
+        array(
+            'type' => 'upload',
+            'mode'    => CONTROL_FIELD_UPLOAD_MODE_VALUE_URL
+        ),
+    )
 
 </code></pre>
