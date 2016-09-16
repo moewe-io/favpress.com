@@ -12,7 +12,11 @@ Our initial goals are
 2. Only one version, no freemium or premium version. Everyone should be able to use the framework without thinking about.
 3. For developers. We want a basic framework developers can easily use. Just basic features, not too fancy stuff or too many features.
 
-## Contribution
+## Use in your plugin or theme
+
+See the official [documentation](http://favpress.com)
+
+## Contribute
 
 Any contribution is welcome. You can:
 
@@ -22,58 +26,6 @@ Any contribution is welcome. You can:
 4. Help us translate the core.
 5. Develop plugins using the framework.
 6. Fund us through buying our [plugins](http://codecanyon.net/user/scrobbleme/portfolio?ref=scrobbleme).
-
-## Core Features
-
-* Theme Options Builder
-* Metaboxes Builder
-* Shortcode Generator Builder
-
-## Features
-
-* Rich Set Of Fields
-* Client Side Validation
-* Custom Data Source
-* Binding Data Source
-* Fields Binding
-* Fields Dependencies
-* Import / Export
-* Restore Options to Default
-* Localization
-* Wordpress 4.4++ compatibility
-
-### Field Types
-
-* TextBox
-* TextArea
-* CheckBox
-* CheckImage
-* RadioButton
-* RadioImage
-* Select
-* MultiSelect
-* Slider
-* Toggle
-* Upload
-* DatePicker
-* ColorPicker
-* CodeEditor
-* NoteBox
-* Fontawesome icon chooser
-* WP TinyMCE Editor
-
-### Field Validation
-
-* alphabet
-* alphanumeric
-* numeric
-* email
-* url
-* maxlength
-* minlength
-* maxselected
-* minselected
-* required
 
 ## How to build
 
