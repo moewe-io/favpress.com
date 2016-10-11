@@ -27,7 +27,6 @@ abstract class FavPress_Importer {
         $this->description = $description;
 
         $loader = FavPress_WP_Loader::instance();
-        $loader->add_main_js('jquery-serialize-object');
         $loader->add_main_js('favpress-importer');
         $loader->add_main_css('jqui');
 

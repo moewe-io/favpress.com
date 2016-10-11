@@ -88,7 +88,7 @@ class FavPress_WP_Loader
 		$this->js_unit_register('shared', $req_scripts);
 
 		// register all styles
-		foreach ($styles as $name => $style) 
+		foreach ($styles as $name => $style)
 		{
 			if(in_array($name, $req_styles) and ! wp_style_is($name, 'registered'))
 				wp_register_style($name, $style['path'], $style['deps']);
@@ -208,7 +208,7 @@ class FavPress_WP_Loader
 
 				wp_register_script($name, $script['path'], $script['deps'], $script['ver'], true);
 
-				if(isset($script['localize']))
+				if(isset($script['localize']) && is_array($script['localize']) && !empty($script['localize']))
 				{
 					$localize = array();
 					foreach ($script['localize']['keys'] as $key)
@@ -272,7 +272,7 @@ class FavPress_WP_Loader
 		{
 			if( !isset($this->{$var_name}[$name][$key]) || !is_array($this->{$var_name}[$name][$key]) )
 				$this->{$var_name}[$name][$key] = array();
-			
+
 			$this->{$var_name}[$name][$key] = array_unique(
 				array_merge(
 					$this->{$var_name}[$name][$key],
@@ -333,7 +333,7 @@ class FavPress_WP_Loader
 		{
 			if( isset($js['localize']['name']) )
 				$this->add_js_data($js_name, 'local_name', $js['localize']['name']);
-			
+
 			if( isset($js['localize']['keys']) and is_array($js['localize']['keys']) )
 				$this->add_js_data($js_name, 'local_data', $js['localize']['keys']);
 		}

@@ -1,6 +1,11 @@
 jQuery(function (jQuery) {
+        var progressbar = jQuery("#importer-progressbar");
+        if (progressbar.length == 0) {
+            return;
+        }
+
         var log = jQuery('#importer-log');
-        var progressbar = jQuery("#importer-progressbar").progressbar({
+        progressbar = progressbar.progressbar({
             value: false
         });
 

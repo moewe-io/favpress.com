@@ -148,14 +148,19 @@ return array(
                 )
             ),
             'jquery-serialize-object' => array(
-                'path' => FAVPRESS_PUBLIC_URL . '/js/vendor/jquery.serialize-object.min.js',
-                'ver'  => '2.5.0',
-                'deps' => array('jquery')
+                'path'     => FAVPRESS_PUBLIC_URL . '/js/vendor/jquery.serialize-object.min.js',
+                'ver'      => '2.5.0',
+                'deps'     => array('jquery'),
+                'override' => true,
             ),
             'favpress-importer'       => array(
-                'path' => FAVPRESS_PUBLIC_URL . '/js/importer.js',
-                'ver'  => '__PLUGIN_VERSION__',
-                'deps' => array('jquery-ui-progressbar', 'jquery-serialize-object')
+                'path'     => FAVPRESS_PUBLIC_URL . '/js/importer.js',
+                'ver'      => '__PLUGIN_VERSION__',
+                'deps'     => array('jquery-ui-progressbar', 'jquery-serialize-object'),
+                'localize' => array(
+                    'name' => 'favpress_importer',
+                    'keys' => array()
+                )
             )
         ),
     ),
