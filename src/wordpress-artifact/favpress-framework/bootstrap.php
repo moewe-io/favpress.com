@@ -315,16 +315,29 @@ add_filter('favpress_option', 'favpress_get_option', 10, 2);
  * @internal Use apply_filters('favpress_option', $default, $key) instead.
  * @see favpress_option()
  */
-function favpress_get_option($default, $key) {
-    return favpress_option($key, $default);
+if (!function_exists('favpress_get_option')) {
+    function favpress_get_option($default, $key) {
+        return favpress_option($key, $default);
+    }
 }
-
 // Allow loading of Metaboxes without the need to check for FavPress
 add_action('after_setup_theme', 'favpress_add_metaboxes', 20);
 
 /**
  * @internal Register your custom action like: add_action('favpress_add_metabox', 'my_action_hook')
  */
-function favpress_add_metaboxes() {
-    do_action('favpress_add_metaboxes');
+if (!function_exists('favpress_add_metaboxes')) {
+    function favpress_add_metaboxes() {
+        do_action('favpress_add_metaboxes');
+    }
+}
+
+
+// Initialize Importers
+add_action('admin_init', 'favpress_init_importers');
+
+if (!function_exists('favpress_init_importers')) {
+    function favpress_init_importers() {
+        do_action('favpress_init_importer');
+    }
 }
