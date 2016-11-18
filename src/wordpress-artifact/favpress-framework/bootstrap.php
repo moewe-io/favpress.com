@@ -320,6 +320,19 @@ if (!function_exists('favpress_get_option')) {
         return favpress_option($key, $default);
     }
 }
+
+// Allow getting metaboxes using filters
+add_filter('favpress_metabox', 'favpress_get_metabox', 10, 3);
+/**
+ * @internal Use apply_filters('favpress_metabox', $default, $key, $post_id) instead.
+ * @see favpress_option()
+ */
+if (!function_exists('favpress_get_metabox')) {
+    function favpress_get_metabox($default, $key, $post_id = null) {
+        return favpress_metabox($key, $default, $post_id);
+    }
+}
+
 // Allow loading of Metaboxes without the need to check for FavPress
 add_action('after_setup_theme', 'favpress_add_metaboxes', 20);
 
