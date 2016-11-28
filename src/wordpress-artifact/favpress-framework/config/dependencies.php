@@ -24,7 +24,7 @@ return array(
                 'override' => false,
             ),
             'bootstrap-colorpicker'   => array(
-                'path' => FAVPRESS_PUBLIC_URL . '/js/vendor/bootstrap-colorpicker.js',
+                'path' => FAVPRESS_PUBLIC_URL . '/libs/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js',
                 'deps' => array('jquery'),
                 'ver'  => false,
             ),
@@ -172,7 +172,7 @@ return array(
         'always' => array('tipsy', 'font-awesome'),
         'paths'  => array(
             'bootstrap-colorpicker' => array(
-                'path' => FAVPRESS_PUBLIC_URL . '/css/vendor/bootstrap-colorpicker.css',
+                'path' => FAVPRESS_PUBLIC_URL . '/libs/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css',
                 'deps' => array(),
             ),
             'tipsy'                 => array(
