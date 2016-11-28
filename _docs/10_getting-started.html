@@ -25,7 +25,7 @@ Add the following code into your <code>functions.php</code>:
 <pre><code class="php">
     require_once 'class-tgm-plugin-activation.php';
 
-    add_action('tgmpa_register','my_prefix_register_required_plugins'));
+    add_action('tgmpa_register','my_prefix_register_required_plugins');
 
     function my_prefix_register_required_plugins(){
         $plugins = array(
