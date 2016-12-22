@@ -3,7 +3,7 @@
 /**
  * The smallest unit of an option, the field it self.
  */
-abstract class FavPress_Control_Field implements iFactory
+abstract class FavPress_Control_Field implements FavPress_iFactory
 {
 
 	/**
@@ -429,7 +429,7 @@ abstract class FavPress_Control_Field implements iFactory
  * Interface to force implementation of the 'factory' pattern method for each field class
  * to enable easier instantiation of each field class.
  */
-interface iFactory
+interface FavPress_iFactory
 {
 	static function withArray($arr = array(), $class_name = null);
 }
