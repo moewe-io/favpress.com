@@ -1,12 +1,12 @@
 <?php
 /*
-	Plugin Name: __PRODUCT_TITLE__
-	Plugin URI: __PRODUCT_URI__
-	Description: __PRODUCT_DESCRIPTION__
-	Version: __PRODUCT_VERSION__
-	Author: __AUTHOR_NAME__
-	Author URI: __AUTHOR_URI__
-	License: GPLv3
+ * Plugin Name: __PRODUCT_TITLE__
+ * Plugin URI: __PRODUCT_URI__
+ * Description: __PRODUCT_DESCRIPTION__
+ * Version: __PRODUCT_VERSION__
+ * Author: __AUTHOR_NAME__
+ * Author URI: __AUTHOR_URI__
+ * License: GPLv3
 */
 
 // Setup Contants
