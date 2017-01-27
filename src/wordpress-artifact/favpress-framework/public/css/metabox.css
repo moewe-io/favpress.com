@@ -74,12 +74,12 @@
   margin: 6px 0 4px;
   display: block; }
 
-.favpress-metabox .favpress-field .label .description {
+.favpress-metabox .favpress-field .description {
   font-size: 0.9em;
   color: #999999;
   line-height: 1.3em; }
 
-.favpress-metabox .favpress-field .label .description p {
+.favpress-metabox .favpress-field .description p {
   margin: 0; }
 
 .favpress-metabox .favpress-field .field {
@@ -120,8 +120,7 @@
 .favpress-metabox .favpress-wpa-loop h4 {
   color: #999999;
   margin: 10px 0 10px;
-  padding: 0 10px;
-  text-transform: uppercase; }
+  padding: 0 10px; }
 
 .favpress-metabox .favpress-wpa-loop .favpress-wpa-group {
   background: #ffffff;
@@ -153,7 +152,6 @@
   font-weight: bold;
   line-height: 30px;
   padding: 0 10px;
-  text-transform: uppercase;
   margin-bottom: -1px; }
 
 .favpress-metabox .favpress-wpa-loop.favpress-repeating-loop .favpress-wpa-group .favpress-wpa-group-heading {
