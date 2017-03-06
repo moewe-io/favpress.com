@@ -85,11 +85,11 @@ jQuery(function (jQuery) {
             }
         });
 
-        if ($.fn.select2) {
+        if (jQuery.fn.select2) {
             // re-init select2
             jQuery(this).find('.favpress-js-select2').select2("destroy");
             // re-init select2 sortable
-            if ($.fn.select2Sortable) jQuery(this).find('.favpress-js-sorter').select2("destroy");
+            if (jQuery.fn.select2Sortable) jQuery(this).find('.favpress-js-sorter').select2("destroy");
             // re-init select2 fontawesome
             jQuery(this).find('.favpress-js-fontawesome').select2("destroy");
 
@@ -214,7 +214,7 @@ jQuery(function (jQuery) {
     jQuery('.favpress-sc-cancel').bind('click.favpress_sc_cancel', function (e) {
         e.preventDefault();
         jQuery('.favpress-sc-element').removeClass('active');
-        var $form = jQuery(this).parents('.favpress-sc-element-form');
+        var $form = jQuery(this).parents('.favpress-sc-element-form')
         $form.favpress_slideUp();
         $form.scReset();
     });
