@@ -85,7 +85,7 @@ class FavPress_WP_Loader
 		}
 
 		// register and add shared-js at the end of dependencies
-		$this->js_unit_register('shared', $req_scripts);
+		$this->js_unit_register('favpress-shared', $req_scripts);
 
 		// register all styles
 		foreach ($styles as $name => $style)
@@ -114,7 +114,7 @@ class FavPress_WP_Loader
 
 			$deps   = array();
 			if( isset($js['deps']) ) $deps = $js['deps'];
-			$deps[] = 'shared';
+			$deps[] = 'favpress-shared';
 
 			foreach ($deps as $dep)
 			{

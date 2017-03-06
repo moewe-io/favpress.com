@@ -96,7 +96,7 @@ return array(
                 'ver'      => '1.0',
                 'override' => true,
             ),
-            'shared'                  => array(
+            'favpress-shared'                  => array(
                 'path'     => FAVPRESS_PUBLIC_URL . '/js/shared.js',
                 'deps'     => array(),
                 'ver'      => '1.1',
@@ -139,7 +139,7 @@ return array(
             'favpress-shortcode'      => array(
                 'path'     => FAVPRESS_PUBLIC_URL . '/js/shortcode-menu.js',
                 'deps'     => array('reveal', 'favpress-shortcode-qt'),
-                'ver'      => '2.0',
+                'ver'      => '2.1',
                 'localize' => array(
                     'name' => 'favpress_ext_sc',
                     'keys' => array(
