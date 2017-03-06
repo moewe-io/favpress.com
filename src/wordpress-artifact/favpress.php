@@ -17,8 +17,8 @@ defined('FAVPRESS_PLUGIN_FILE') or define('FAVPRESS_PLUGIN_FILE', __FILE__);
 
 require 'favpress-framework/bootstrap.php';
 
-require 'favpress-framework/includes/plugin-update-checker-3.0/plugin-update-checker.php';
-$favpress_updater = PucFactory::buildUpdateChecker(
+require 'favpress-framework/includes/plugin-update-checker-4.0.3/plugin-update-checker.php';
+$favpress_updater = Puc_v4_Factory::buildUpdateChecker(
     '__UPDATER_BASE_PATH__/updater.json',
     __FILE__,
     '__PRODUCT_SLUG__',
