@@ -12,9 +12,9 @@ var foldersToIgnoreForFiltering = [];
 var filesToIgnoreFromTarget = [];
 
 var date = new Date();
-var majorVersion = '2.1-beta.';
-var buildVersion = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate() + '.' + date.getHours() + '.' + date.getMinutes() + '.' + date.getSeconds();
-var version = majorVersion + '.' + buildVersion;
+var majorVersion = '';
+var buildVersion = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate() + '.' + date.getHours() + '.' + date.getMinutes();
+var version = majorVersion + buildVersion;
 // Placeholders, which will be replaced within target files.
 // You can add anything you want.
 var placeholders = {
