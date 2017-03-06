@@ -139,7 +139,7 @@ return array(
             'favpress-shortcode'      => array(
                 'path'     => FAVPRESS_PUBLIC_URL . '/js/shortcode-menu.js',
                 'deps'     => array('reveal', 'favpress-shortcode-qt'),
-                'ver'      => '2.1',
+                'ver'      => '2.1.1',
                 'localize' => array(
                     'name' => 'favpress_ext_sc',
                     'keys' => array(
