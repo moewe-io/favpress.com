@@ -19,6 +19,8 @@ $favpress_filesystem->add_directories('config', FAVPRESS_CONFIG_DIR);
 $favpress_filesystem->add_directories('data', FAVPRESS_DATA_DIR);
 $favpress_filesystem->add_directories('includes', FAVPRESS_INCLUDE_DIR);
 
+FavPress_Customizer::instance();
+
 //////////////////////////
 // Include Data Source  //
 //////////////////////////
