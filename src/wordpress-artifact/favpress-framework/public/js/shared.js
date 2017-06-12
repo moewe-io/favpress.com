@@ -1071,6 +1071,9 @@ favpress.init_datepicker = function($elements)
 				jQuery(this).trigger('keyup');
 				jQuery(this).trigger('blur');
 			};
+            options.numberOfMonths = 2;
+            options.changeMonth = true;
+            options.changeYear = true;
 			jQuery(this).datepicker(options);
 			jQuery(this).datepicker('setDate', options.value);
 		});
