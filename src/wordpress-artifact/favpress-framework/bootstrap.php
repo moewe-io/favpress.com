@@ -336,7 +336,7 @@ if (!function_exists('favpress_get_metabox')) {
 }
 
 // Allow loading of Metaboxes without the need to check for FavPress
-add_action('init', 'favpress_add_metaboxes', 1000);
+add_action('after_setup_theme', 'favpress_add_metaboxes', 1000);
 
 /**
  * @internal Register your custom action like: add_action('favpress_add_metabox', 'my_action_hook')
