@@ -13,7 +13,7 @@ var filesToIgnoreFromTarget = [];
 
 var date = new Date();
 var majorVersion = '';
-var buildVersion = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + date.getDate() + '.' + date.getHours() + '.' + date.getMinutes();
+var buildVersion = date.getFullYear() + '.' + (date.getMonth() + 1) + '.' + (date.getDate() * 24 * 60 + date.getHours() * 60 + date.getMinutes());
 var version = majorVersion + buildVersion;
 // Placeholders, which will be replaced within target files.
 // You can add anything you want.
