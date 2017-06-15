@@ -17,11 +17,8 @@ defined('FAVPRESS_PLUGIN_FILE') or define('FAVPRESS_PLUGIN_FILE', __FILE__);
 
 require 'favpress-framework/bootstrap.php';
 
-require 'favpress-framework/includes/plugin-update-checker-4.0.3/plugin-update-checker.php';
+require 'favpress-framework/includes/plugin-update-checker-4.1/plugin-update-checker.php';
 $favpress_updater = Puc_v4_Factory::buildUpdateChecker(
-    '__UPDATER_BASE_PATH__/updater.json',
-    __FILE__,
-    '__PRODUCT_SLUG__',
-    24
+    'https://apps.moewe.io/favpress/master/updater.json', __FILE__, 'favpress', 24
 );
 $favpress_updater->throttleRedundantChecks = true;
