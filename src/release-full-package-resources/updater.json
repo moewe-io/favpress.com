@@ -1,9 +1,9 @@
 {
-  "name": "__PRODUCT_TITLE__",
+  "name": "FavPress",
   "version": "__PRODUCT_VERSION__",
-  "author": "__AUTHOR_NAME__",
-  "download_url": "__UPDATER_BASE_PATH__/__PRODUCT_SLUG__.zip",
+  "author": "MOEWE GbR + Contributors",
+  "download_url": "https://apps.moewe.io/favpress/master/favpress.zip",
   "sections": {
-    "description": "__PRODUCT_DESCRIPTION__"
+    "description": "An option and metabox framework for WordPress for developers."
   }
 }

@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: __PRODUCT_TITLE__
- * Plugin URI: __PRODUCT_URI__
- * Description: __PRODUCT_DESCRIPTION__
+ * Plugin Name: FavPress
+ * Plugin URI: http://www.favpress.com/
+ * Description: An option and metabox framework for WordPress for developers.
  * Version: __PRODUCT_VERSION__
- * Author: __AUTHOR_NAME__
- * Author URI: __AUTHOR_URI__
+ * Author: MOEWE GbR and Contributors
+ * Author URI: https://www.moewe.io
  * License: GPLv3
 */
 
