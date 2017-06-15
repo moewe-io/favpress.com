@@ -44,11 +44,12 @@ class FavPress_Control_Field_WPEditor extends FavPress_Control_Field
 
 	protected function _setup_data()
 	{
-		$opt = array(
-			'use_external_plugins'       => $this->use_external_plugins(),
-			'disabled_externals_plugins' => implode(',', $this->get_disabled_externals_plugins()),
-			'disabled_internals_plugins' => implode(',', $this->get_disabled_internals_plugins()),
-		);
+        $opt = array(
+            'use_external_plugins'       => $this->use_external_plugins(),
+            'disabled_externals_plugins' => implode(',', $this->get_disabled_externals_plugins()),
+            'disabled_internals_plugins' => implode(',', $this->get_disabled_internals_plugins()),
+            'textarea_name'              => $this->get_name() . '_ce'
+        );
 		$this->add_data('opt', FavPress_Util_Text::make_opt($opt));
 		$this->add_data('opt_raw', $opt);
 		parent::_setup_data();
@@ -85,7 +86,7 @@ class FavPress_Control_Field_WPEditor extends FavPress_Control_Field
 	{
 		return $this->_disabled_externals_plugins;
 	}
-	
+
 	/**
 	 * Set disabled external plugins
 	 *
@@ -106,11 +107,11 @@ class FavPress_Control_Field_WPEditor extends FavPress_Control_Field
 	public function get_disabled_internals_plugins() {
 		return $this->_disabled_internals_plugins;
 	}
-	
+
 	/**
 	 * Set disabled internal plugins
 	 *
-	 * @param Array $_disabled_internals_plugins 
+	 * @param Array $_disabled_internals_plugins
 	 */
 	public function set_disabled_internals_plugins($_disabled_internals_plugins) {
 		$this->_disabled_internals_plugins = $_disabled_internals_plugins;

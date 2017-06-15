@@ -1090,7 +1090,6 @@ favpress.init_controls = function($parent)
 	favpress.init_colorpicker($parent.find('.favpress-js-colorpicker'));
 	favpress.init_slider($parent.find('.favpress-js-slider'));
 	favpress.init_ace_editor($parent.find('.favpress-js-codeeditor'));
-	favpress.init_wpeditor($parent.find('.favpress-js-wpeditor'));
 };
 
 // Fontawesome Chooser
@@ -1187,27 +1186,5 @@ favpress.init_ace_editor = function($elements)
 			});
 
 		});
-	}
-};
-
-// Init WP TinyMCE Editor
-if(typeof window.KIA_metabox !== 'undefined')
-{
-	KIA_metabox.mediaButtons();
-}
-favpress.init_wpeditor = function($elements)
-{
-	if(typeof window.KIA_metabox !== 'undefined')
-	{
-		if($elements.length <= 0)
-			return;
-		KIA_metabox.runTinyMCE($elements);
-	}
-};
-favpress.tinyMCE_save = function()
-{
-	if(typeof window.tinyMCE !== 'undefined')
-	{
-		tinyMCE.triggerSave(false, true);
 	}
 };

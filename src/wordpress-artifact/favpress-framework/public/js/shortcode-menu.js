@@ -171,7 +171,6 @@ jQuery(function (jQuery) {
 
         // trigger non reloading form submit, so that any event binded on this called
         $form.on('submit', function (e) {
-            favpress.tinyMCE_save();
             e.preventDefault();
         });
         $form.submit();

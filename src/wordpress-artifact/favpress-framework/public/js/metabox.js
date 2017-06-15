@@ -111,38 +111,8 @@
 			axis: 'y',
 			opacity: 0.5,
 			tolerance: 'pointer',
-			start: function(event, ui) { // turn TinyMCE off while sorting (if not, it won't work when resorted)
-				if(typeof window.KIA_metabox !== 'undefined')
-				{
-					textareaIDs = [];
-					favpress.tinyMCE_save();
-					$(ui.item).find('.customEditor textarea').each(function(){
-						if($(this).parents('.tocopy').length <= 0)
-						{
-							try { tinyMCE.execCommand('mceRemoveControl', false, this.id); } catch(e){}
-							textareaIDs.push(favpress.jqid(this.id));
-						}
-					});
-				}
-			},
-			stop: function(event, ui) { // re-initialize TinyMCE when sort is completed
-				if(typeof window.KIA_metabox !== 'undefined')
-				{
-					for (var i = textareaIDs.length - 1; i >= 0; i--) {
-						var $textarea = $(textareaIDs[i]);
-						$textarea.val(switchEditors.wpautop($textarea.val()));
-					}
-					textareaIDs = textareaIDs.join(", ");
-					try {
-						KIA_metabox.runTinyMCE($(textareaIDs));
-						favpress.tinyMCE_save();
-						for (var i = textareaIDs.length - 1; i >= 0; i--) {
-							var $textarea = $(textareaIDs[i]);
-							$textarea.val(switchEditors.pre_wpautop($textarea.val()));
-						}
-					} catch(e){}
-				}
-			}
+			start: function(event, ui) { },
+			stop: function(event, ui) { }
 		});
 	}
 
@@ -176,7 +146,6 @@
 		    errors    = 0;
 
 		// update tinyMCE textarea content
-		favpress.tinyMCE_save();
 
 		$('.favpress-field').removeClass('favpress-error');
 		$('.validation-msg.favpress-error').remove();

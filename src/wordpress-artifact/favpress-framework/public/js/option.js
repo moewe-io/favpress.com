@@ -208,9 +208,6 @@
 	$('.favpress-js-option-form').bind('submit', function(e) {
 		e.preventDefault();
 		
-		// update tinyMCE textarea content
-		favpress.tinyMCE_save();
-
 		$('.favpress-js-option-form .favpress-field').removeClass('favpress-error');
 		$('.validation-notif.favpress-error').remove();
 		$('.validation-msg.favpress-error').remove();
