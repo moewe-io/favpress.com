@@ -23,13 +23,9 @@
 						.slideDown(0, function(){
 							if(i == siblings.length - 1)
 							{
-								container.animate({
-									scrollTop: group.offset().top - $('#wpadminbar').height()
-								}).promise().done(function(){
-									control.slideUp(0,function() {
-										$(this).removeClass('favpress-hide')
-										.slideDown('fast');
-									});
+								control.slideUp(0,function() {
+									$(this).removeClass('favpress-hide')
+									.slideDown('fast');
 								});
 							}
 						});
@@ -38,13 +34,9 @@
 			}
 			else
 			{
-				container.animate({
-					scrollTop: group.offset().top - $('#wpadminbar').height()
-				}).promise().done(function(){
-					control.slideUp(0,function() {
-						$(this).removeClass('favpress-hide')
-						.slideDown('fast');
-					});
+				control.slideUp(0,function() {
+					$(this).removeClass('favpress-hide')
+					.slideDown('fast');
 				});
 			}
 		}
