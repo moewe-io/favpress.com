@@ -7,14 +7,9 @@ return array(
     ////////////////////////////////////////////////
 
     /**
-     * jQuery UI Theme
-     */
-    'jqui_theme' => ($jqui_theme = 'smoothness'),
-
-    /**
      * Scripts.
      */
-    'scripts'    => array(
+    'scripts' => array(
         'always' => array('jquery', 'scrollspy', 'tipsy', 'jquery-typing'),
         'paths'  => array(
             'jquery'                  => array(
@@ -96,7 +91,7 @@ return array(
                 'ver'      => '1.0',
                 'override' => true,
             ),
-            'favpress-shared'                  => array(
+            'favpress-shared'         => array(
                 'path'     => FAVPRESS_PUBLIC_URL . '/js/shared.js',
                 'deps'     => array(),
                 'ver'      => '1.1',
@@ -168,7 +163,7 @@ return array(
     /**
      * Styles.
      */
-    'styles'     => array(
+    'styles'  => array(
         'always' => array('tipsy', 'font-awesome'),
         'paths'  => array(
             'bootstrap-colorpicker' => array(
@@ -180,7 +175,7 @@ return array(
                 'deps' => array(),
             ),
             'jqui'                  => array(
-                'path' => FAVPRESS_PUBLIC_URL . '/css/vendor/jqueryui/themes/' . $jqui_theme . '/jquery-ui-1.9.2.custom.min.css',
+                'path' => FAVPRESS_PUBLIC_URL . '/css/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.css',
                 'deps' => array(),
             ),
             'font-awesome'          => array(
@@ -213,7 +208,7 @@ return array(
     /**
      * Rules for dynamic loading of dependencies, load only what needed.
      */
-    'rules'      => array(
+    'rules'   => array(
         'color'       => array('js' => array('bootstrap-colorpicker'), 'css' => array('bootstrap-colorpicker')),
         'select'      => array('js' => array('select2'), 'css' => array('select2')),
         'multiselect' => array('js' => array('select2'), 'css' => array('select2')),
@@ -224,7 +219,6 @@ return array(
         'fontawesome' => array('js' => array('select2'), 'css' => array('select2')),
         'wpeditor'    => array('js' => array('kia-metabox'), 'css' => array()),
     )
-
 );
 
 /**
