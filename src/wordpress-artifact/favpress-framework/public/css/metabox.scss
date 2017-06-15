@@ -183,6 +183,7 @@
   line-height: 30px;
   padding: 0 10px;
   margin-bottom: -1px;
+  transition: background-color 0.5s;
   &:hover {
     background-color: #e1e1e1;
   }

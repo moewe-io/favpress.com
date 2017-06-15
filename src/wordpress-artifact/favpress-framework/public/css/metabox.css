@@ -152,7 +152,8 @@
   font-weight: bold;
   line-height: 30px;
   padding: 0 10px;
-  margin-bottom: -1px; }
+  margin-bottom: -1px;
+  transition: background-color 0.5s; }
   .favpress-metabox .favpress-wpa-loop .favpress-wpa-group .favpress-wpa-group-heading:hover {
     background-color: #e1e1e1; }
 
