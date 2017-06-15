@@ -98,12 +98,11 @@ class FavPress_Site_GoogleWebFont
 		{
 			$atts  = $font['atts'];
 			$param = implode(',', $atts);
-			$link  = "http://fonts.googleapis.com/css?family=$name" . ($param !== '' ? ":$param" : '');
+			$link  = "https://fonts.googleapis.com/css?family=$name" . ($param !== '' ? ":$param" : '');
 			if(!empty($font['subsets']))
 			{
 				$subsets = implode(',', $font['subsets']);
 				$link   .= '&subset=' . $subsets;
-
 			}
 			$links[$name] = $link;
 		}
