@@ -440,7 +440,7 @@ class FavPress_MetaBox_Alchemy extends WPAlchemy_MetaBox
 
 			$html .= '<div id="'. $g['name'] .'" class="favpress-wpa-group wpa_group wpa_group-' . $name . '">';
 			$html .= '<div class="favpress-wpa-group-heading"><a href="#" class="favpress-wpa-group-title">' . $icon . $group['title'] . '</a></div>';
-			$html .= '<div class="favpress-controls' . ((!$is_first) ? ' favpress-hide' : '') . '">';
+			$html .= '<div class="favpress-controls favpress-hide">';
 
 			foreach ($g['childs'] as $f)
 			{
@@ -491,7 +491,7 @@ class FavPress_MetaBox_Alchemy extends WPAlchemy_MetaBox
 
 			$html .= '<div id="'. $g['name'] .'" class="favpress-wpa-group wpa_group wpa_group-' . $name . $class . '">';
 			$html .= '<div class="favpress-wpa-group-heading"><a href="#" class="favpress-wpa-group-title">' . $icon . $group['title'] . '</a><a href="#" class="dodelete favpress-wpa-group-remove" title="'. __('Remove', 'favpress') .'"><i class="fa fa-times"></i> '. __('Remove', 'favpress') .'</a></div>';
-			$html .= '<div class="favpress-controls' . ((!$is_first) ? ' favpress-hide' : '') . '">';
+			$html .= '<div class="favpress-controls favpress-hide">';
 			if ($g === end($group['groups']))
 			{
 				$tocopy = $g['name'] . '[tocopy]';
