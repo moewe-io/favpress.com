@@ -21,7 +21,8 @@ script:
   # We upload the files for now. Better solution needed.
 
   # Package the plugin
-  - jar -cMf $TRAVIS_BUILD_DIR/target/favpress.zip -C $TRAVIS_BUILD_DIR/target favpress
+  # - jar -cMf $TRAVIS_BUILD_DIR/target/favpress.zip -C $TRAVIS_BUILD_DIR/target favpress
+  - zip -r $TRAVIS_BUILD_DIR/target/favpress.zip $TRAVIS_BUILD_DIR/target/favpress
 after_success:
   - curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip"
   - curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updater.json
