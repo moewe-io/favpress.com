@@ -8,15 +8,18 @@ script:
   -  BUILD_NUMBER="$(date +'%Y').$(date +'%m').$TRAVIS_BUILD_NUMBER"
   - "mkdir -p $TRAVIS_BUILD_DIR/target/favpress"
   - "cp -r $TRAVIS_BUILD_DIR/src/wordpress-artifact/* $TRAVIS_BUILD_DIR/target/favpress/"
+  - "cp -r $TRAVIS_BUILD_DIR/src/release-full-package-resources/updater.json $TRAVIS_BUILD_DIR/target/updater.json"
   - "sed -i -- 's/__PRODUCT_VERSION__/$BUILD_NUMBER/g' $TRAVIS_BUILD_DIR/target/favpress/favpress.php"
+  - "sed -i -- 's/__PRODUCT_VERSION__/$BUILD_NUMBER/g' $TRAVIS_BUILD_DIR/target/updater.json"
+
   # Compile SCSS files
   # We upload the files for now. Better solution needed.
 
   # Package the plugin
   - "jar -cMf $TRAVIS_BUILD_DIR/target/favpress.zip -C $TRAVIS_BUILD_DIR/target favpress"
 after_success:
-  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/release-full-package/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip"
-  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/release-full-package/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updater.json"
+  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip"
+  - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updater.json"
 deploy:
   provider: releases
   api_key:
