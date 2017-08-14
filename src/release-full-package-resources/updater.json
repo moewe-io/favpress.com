@@ -2,7 +2,7 @@
   "name": "FavPress",
   "version": "__PRODUCT_VERSION__",
   "author": "MOEWE GbR + Contributors",
-  "download_url": "https://apps.moewe.io/favpress/master/favpress.zip",
+  "download_url": "https://apps.moewe.io/favpress/__CURRENT_BRANCH__/favpress.zip",
   "sections": {
     "description": "An option and metabox framework for WordPress for developers."
   }

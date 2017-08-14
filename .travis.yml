@@ -1,9 +1,6 @@
 language: php
 php:
-  - '5.5'
-  - '5.6'
   - '7.0'
-  - '7.1'
 env:
   global:
     - secure: DjyeYKo8lyy2o/xvO7mxDU1KrtwYotnV9V6ngFemeD4PsjrxRgGu30eTpuM/emAXUxTTTJL2HbmjRZd5boA3fqoKRzGQbQk0momrdh1AHGIQMkEKBMdc/oVtnqIfQMHUslkwpAPVI0nzJqs8rh6mmxa5TYOsxo0Q0QaRYbuh89wgX8Y/pr3/R4EvhdcTvRDs4EFt0FGsWW9dwr8ZVWQYw7jNrNmalfQJ0ilDuxC/1LjpI/SRooMRAk2NnsRzzNufU/eCzHwvcoPcS0fz82Z22nKG1NiFQlA8r7q7RHmQN7Gk392sl7E9DBvaigrSR+WGT3ZNKFMBwKzFw/SFuc2o0JtAry60GUSZzm0PlmpoYkVPCNMbjQygbTLo3jCq+SYlHI4BZhhXvFPUOA/QVmT6NpdckV+tbmv+wtjeLSYTz9zEvs5FsdA2g/Nf1QXMDc8lvlxiTUPF3krzWAK/au4MiKqsGzA/JbBIDkdfSQkDSMLOPLsmMngOc24mKdeEjfRLDJvtUz7WCNUfukBH3wIX01iqWEkHgnQCfdQQ0rUhuZdXIkLea6tuMZZViV3MLCbUn0LkZ42AEJpq9nh578mXfXn9DibZhZReaV0ZkeK6UtOn2Sf+SYEFwO17KGoQ38Jz65omPGnKv6UM0Ss/AhzcFfhCBwSddyKLMBk2Pti+Na4=
@@ -11,12 +8,13 @@ env:
 before_script:
   - rm -f -r $TRAVIS_BUILD_DIR/target
 script:
-  - BUILD_NUMBER="$(date +'%Y').$(date +'%m').$TRAVIS_BUILD_NUMBER"
+  - BUILD_NUMBER="$(date +'%Y').$(date +'%m').$TRAVIS_BUILD_NUMBER-$TRAVIS_BRANCH"
   - mkdir -p $TRAVIS_BUILD_DIR/target/favpress
   - cp -r $TRAVIS_BUILD_DIR/src/wordpress-artifact/* $TRAVIS_BUILD_DIR/target/favpress/
   - cp -r $TRAVIS_BUILD_DIR/src/release-full-package-resources/updater.json $TRAVIS_BUILD_DIR/target/updater.json
   - sed -i -- "s/__PRODUCT_VERSION__/$BUILD_NUMBER/g" $TRAVIS_BUILD_DIR/target/favpress/favpress.php
   - sed -i -- "s/__PRODUCT_VERSION__/$BUILD_NUMBER/g" $TRAVIS_BUILD_DIR/target/updater.json
+  - sed -i -- "s/__CURRENT_BRANCH__/$TRAVIS_BRANCH/g" $TRAVIS_BUILD_DIR/target/updater.json
 
   # Compile SCSS files
   # We upload the files for now. Better solution needed.
