@@ -47,7 +47,7 @@ abstract class FavPress_Importer {
         $result = array(
             'status'   => FavPress_Importer::$STATUS_OKAY,
             'time'     => date("Y-m-d H:i:s"),
-            'message'  => sprintf(_x('Processing batch. (Offset: %s, Limit: %s)', 'favpress_importer', '__PLUGIN_SLUG__'), $offset, $limit),
+            'message'  => sprintf(_x('Processing batch. (Offset: %s, Limit: %s)', 'favpress_importer', 'favpress'), $offset, $limit),
             'offset'   => $offset + $limit,
             'limit'    => $limit,
             'total'    => 0,
@@ -58,7 +58,7 @@ abstract class FavPress_Importer {
             $result = apply_filters($action, $result, $offset, $limit);
         } else {
             $result['status'] = FavPress_Importer::$STATUS_ERROR;
-            $result['message'] = _x('There was no action given', 'favpress_importer', '__PLUGIN_SLUG__');
+            $result['message'] = _x('There was no action given', 'favpress_importer', 'favpress');
         }
         echo json_encode($result);
         wp_die(); // this is required to terminate immediately and return a proper response
@@ -73,7 +73,7 @@ abstract class FavPress_Importer {
     function delete($status, $offset, $limit) {
         return array(
             'status'   => FavPress_Importer::$STATUS_ERROR,
-            'message'  => _x('Not implemented', 'favpress_importer', '__PLUGIN_SLUG__'),
+            'message'  => _x('Not implemented', 'favpress_importer', 'favpress'),
             'offset'   => 0,
             'limit'    => 0,
             'total'    => -1,
@@ -91,7 +91,7 @@ abstract class FavPress_Importer {
     function import($status, $offset, $limit) {
         return array(
             'status'   => FavPress_Importer::$STATUS_ERROR,
-            'message'  => _x('Not implemented', 'favpress_importer', '__PLUGIN_SLUG__'),
+            'message'  => _x('Not implemented', 'favpress_importer', 'favpress'),
             'offset'   => 0,
             'limit'    => 0,
             'total'    => -1,
@@ -104,22 +104,22 @@ abstract class FavPress_Importer {
         ?>
         <h1><?php echo apply_filters('favpress_importer_title_' . $this->id, $this->name) ?></h1>
         <div id="importer-progress-panel" style="display: none;">
-            <h2><?php echo _x('Progress', 'favpress_importer', '__PLUGIN_SLUG__'); ?></h2>
+            <h2><?php echo _x('Progress', 'favpress_importer', 'favpress'); ?></h2>
             <div id="importer-progressbar" style="width: 90%;"></div>
             <br/>
-            <h3><label for="importer-log"><?php echo _x('message', 'favpress_importer', '__PLUGIN_SLUG__') ?></label>
+            <h3><label for="importer-log"><?php echo _x('message', 'favpress_importer', 'favpress') ?></label>
             </h3>
             <textarea id="importer-log" style="width: 90%;" rows="10"></textarea>
 
             <br/>
             <button
-                onclick="jQuery('#importer-progress-panel').hide(); return false;"><?php echo _x('Hide', 'favpress_importer', '__PLUGIN_SLUG__'); ?></button>
+                onclick="jQuery('#importer-progress-panel').hide(); return false;"><?php echo _x('Hide', 'favpress_importer', 'favpress'); ?></button>
         </div>
         <?php
         if ($this->support_deletion) {
             ?>
             <form id="favpress-remove-old-data-form">
-                <h2><?php echo _x('Delete old data', 'favpress_importer', '__PLUGIN_SLUG__') ?></h2>
+                <h2><?php echo _x('Delete old data', 'favpress_importer', 'favpress') ?></h2>
                 <input type="hidden" name="action" value="favpress_importer_delete_<?php echo $this->id ?>"/>
                 <?php do_action('favpress_importer_render_delete_form_' . $this->id); ?>
                 <button type="submit">Delete</button>
@@ -129,7 +129,7 @@ abstract class FavPress_Importer {
 
         ?>
         <form id="favpress-import-form">
-            <h2><?php echo _x('Start Import', 'favpress_importer', '__PLUGIN_SLUG__') ?></h2>
+            <h2><?php echo _x('Start Import', 'favpress_importer', 'favpress') ?></h2>
             <input type="hidden" name="action" value="favpress_importer_import_<?php echo $this->id ?>"/>
             <?php do_action('favpress_importer_render_import_form_' . $this->id); ?>
             <button type="submit">Import</button>

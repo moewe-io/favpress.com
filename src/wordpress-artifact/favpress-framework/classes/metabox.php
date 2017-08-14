@@ -32,7 +32,7 @@ class FavPress_Metabox extends WPAlchemy_MetaBox
 		// Modify title in dev mode
 		if( $this->is_dev_mode )
 		{
-			$this->title = __('[Development Mode] ', '__PLUGIN_SLUG__') . $this->title;
+			$this->title = __('[Development Mode] ', 'favpress') . $this->title;
 		}
 
 		if ($this->can_output() and FavPress_WP_Admin::is_post_or_page() )
@@ -563,7 +563,7 @@ class FavPress_Metabox extends WPAlchemy_MetaBox
 			if ($g === reset($group['groups'])){ $is_first = true; $class = ' first';}
 
 			$html .= '<div id="'. $g['name'] .'" class="favpress-wpa-group wpa_group wpa_group-' . $name . $class . '">';
-			$html .= '<div class="favpress-wpa-group-heading"><a href="#" class="favpress-wpa-group-title">' . $icon . $group['title'] . '</a><a href="#" class="dodelete favpress-wpa-group-remove" title="'. __('Remove', '__PLUGIN_SLUG__') .'"><i class="fa fa-times"></i> '. __('Remove', '__PLUGIN_SLUG__') .'</a></div>';
+			$html .= '<div class="favpress-wpa-group-heading"><a href="#" class="favpress-wpa-group-title">' . $icon . $group['title'] . '</a><a href="#" class="dodelete favpress-wpa-group-remove" title="'. __('Remove', 'favpress') .'"><i class="fa fa-times"></i> '. __('Remove', 'favpress') .'</a></div>';
 			$html .= '<div class="favpress-controls' . ((!$is_first) ? ' favpress-hide' : '') . '">';
 			if ($g === end($group['groups']))
 			{
@@ -585,7 +585,7 @@ class FavPress_Metabox extends WPAlchemy_MetaBox
 		}
 
 		$html .= '<div class="favpress-wpa-group-add">';
-		$html .= '<a href="#" class="button button-large docopy-' . $name . '">'. __('Add More', '__PLUGIN_SLUG__') . ' ' . $group['title'] . '</a>';
+		$html .= '<a href="#" class="button button-large docopy-' . $name . '">'. __('Add More', 'favpress') . ' ' . $group['title'] . '</a>';
 		$html .= '</div>';
 
 		$html .= '</div>';

@@ -257,8 +257,8 @@ class FavPress_ShortcodeGenerator
 		?>
 		</div>
 		<div class="favpress-sc-action">
-			<button class="favpress-sc-insert button"><?php _e('Insert', '__PLUGIN_SLUG__'); ?></button>
-			<button class="favpress-sc-cancel button"><?php _e('Cancel', '__PLUGIN_SLUG__') ?></button>
+			<button class="favpress-sc-insert button"><?php _e('Insert', 'favpress'); ?></button>
+			<button class="favpress-sc-cancel button"><?php _e('Cancel', 'favpress') ?></button>
 		</div>
 		<?php
 	}

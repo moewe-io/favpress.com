@@ -66,8 +66,8 @@
 				<form id="favpress-option-form" class="favpress-option-form favpress-js-option-form" method="POST">
 					<div id="favpress-submit-top" class="favpress-submit top">
 						<div class="inner">
-							<input class="favpress-save favpress-button button button-primary" type="submit" value="<?php _e('Save Changes', '__PLUGIN_SLUG__'); ?>" />
-							<p class="favpress-js-save-loader save-loader" style="display: none;"><img src="<?php FavPress_Util_Res::img_out('ajax-loader.gif', ''); ?>" /><?php _e('Saving Now', '__PLUGIN_SLUG__'); ?></p>
+							<input class="favpress-save favpress-button button button-primary" type="submit" value="<?php _e('Save Changes', 'favpress'); ?>" />
+							<p class="favpress-js-save-loader save-loader" style="display: none;"><img src="<?php FavPress_Util_Res::img_out('ajax-loader.gif', ''); ?>" /><?php _e('Saving Now', 'favpress'); ?></p>
 							<p class="favpress-js-save-status save-status" style="display: none;"></p>
 						</div>
 					</div>
@@ -81,8 +81,8 @@
 					<?php endforeach; ?>
 					<div id="favpress-submit-bottom" class="favpress-submit bottom">
 						<div class="inner">
-							<input class="favpress-save favpress-button button button-primary" type="submit" value="<?php _e('Save Changes', '__PLUGIN_SLUG__'); ?>" />
-							<p class="favpress-js-save-loader save-loader" style="display: none;"><img src="<?php FavPress_Util_Res::img_out('ajax-loader.gif', ''); ?>" /><?php _e('Saving Now', '__PLUGIN_SLUG__'); ?></p>
+							<input class="favpress-save favpress-button button button-primary" type="submit" value="<?php _e('Save Changes', 'favpress'); ?>" />
+							<p class="favpress-js-save-loader save-loader" style="display: none;"><img src="<?php FavPress_Util_Res::img_out('ajax-loader.gif', ''); ?>" /><?php _e('Saving Now', 'favpress'); ?></p>
 							<p class="favpress-js-save-status save-status" style="display: none;"></p>
 						</div>
 					</div>
@@ -90,7 +90,7 @@
 			</div>
 		</div>
 		<div id="favpress-copyright" class="favpress-copyright">
-			<p><?php printf(__('This option panel is built using <a href="http://favpress.com/" title="FavPress %s">FavPress</a>', '__PLUGIN_SLUG__'), FAVPRESS_VERSION); ?></p>
+			<p><?php printf(__('This option panel is built using <a href="http://favpress.com/" title="FavPress %s">FavPress</a>', 'favpress'), FAVPRESS_VERSION); ?></p>
 		</div>
 	</div>
 </div>

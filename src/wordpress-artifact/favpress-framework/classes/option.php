@@ -44,8 +44,8 @@ class FavPress_Option
 			'minimum_role'          => 'edit_theme_options',
 			'menu_page'             => 'themes.php',
 			'layout'                => 'fixed',
-			'page_title'            => __( 'FavPress Options', '__PLUGIN_SLUG__' ),
-			'menu_label'            => __( 'FavPress Options', '__PLUGIN_SLUG__' ),
+			'page_title'            => __( 'FavPress Options', 'favpress' ),
+			'menu_label'            => __( 'FavPress Options', 'favpress' ),
 			'priority'              => 10,
 		), $configs);
 
@@ -58,11 +58,11 @@ class FavPress_Option
 
 		// check and set required configs
 		if(isset($option_key)) $this->set_option_key($option_key);
-		else throw new Exception(__( 'Option Key is required', '__PLUGIN_SLUG__' ), 1);
+		else throw new Exception(__( 'Option Key is required', 'favpress' ), 1);
 		if(isset($template)) $this->set_template($template);
-		else throw new Exception(__( 'Template Array/File is required', '__PLUGIN_SLUG__' ), 1);
+		else throw new Exception(__( 'Template Array/File is required', 'favpress' ), 1);
 		if(isset($page_slug)) $this->set_page_slug($page_slug);
-		else throw new Exception(__( 'Page Slug is required', '__PLUGIN_SLUG__' ), 1);
+		else throw new Exception(__( 'Page Slug is required', 'favpress' ), 1);
 
 		// swim in the pool
 		self::$pool[$this->get_option_key()] = &$this;
@@ -164,7 +164,7 @@ class FavPress_Option
 
 	public function dev_mode_notice()
 	{
-		FavPress_WP_Util::admin_notice(__("Development Mode is Active, options' values won't be saved into database.", '__PLUGIN_SLUG__'), false);
+		FavPress_WP_Util::admin_notice(__("Development Mode is Active, options' values won't be saved into database.", 'favpress'), false);
 	}
 
 	public function enqueue_scripts_and_styles()
@@ -303,7 +303,7 @@ class FavPress_Option
 			if(empty($option))
 			{
 				$result['status']  = false;
-				$result['message'] = __("Can not be empty", '__PLUGIN_SLUG__');
+				$result['message'] = __("Can not be empty", 'favpress');
 			}
 			else
 			{
@@ -328,7 +328,7 @@ class FavPress_Option
 				else
 				{
 					$result['status']  = false;
-					$result['message'] = __("Invalid data", '__PLUGIN_SLUG__');
+					$result['message'] = __("Invalid data", 'favpress');
 				}
 			}
 		}
@@ -361,7 +361,7 @@ class FavPress_Option
 
 			$result = array(
 				'status' => true,
-				'message'=> __("Successful", '__PLUGIN_SLUG__'),
+				'message'=> __("Successful", 'favpress'),
 				'option' => $sr_options,
 			);
 		}
@@ -386,12 +386,12 @@ class FavPress_Option
 		if($verify)
 		{
 			$result['status']  = true;
-			$result['message'] = __("Successful", '__PLUGIN_SLUG__');
+			$result['message'] = __("Successful", 'favpress');
 		}
 		else
 		{
 			$result['status']  = false;
-			$result['message'] = __("Unverified Access", '__PLUGIN_SLUG__');
+			$result['message'] = __("Unverified Access", 'favpress');
 		}
 		return $result;
 	}
@@ -457,7 +457,7 @@ class FavPress_Option
 		else if(is_array($this->get_template()))
 			$template = $this->get_template();
 		else
-			throw new Exception(__( 'Invalid template supplied', '__PLUGIN_SLUG__' ), 1);
+			throw new Exception(__( 'Invalid template supplied', 'favpress' ), 1);
 
 		$parser = new FavPress_Option_Parser();
 		$set    = $parser->parse_array_options($template, $this->use_auto_group_naming());
@@ -470,13 +470,13 @@ class FavPress_Option
 		{
 			// setup utility menu
 			$util_menu = new FavPress_Option_Control_Group_Menu();
-			$util_menu->set_title(__('Utility', '__PLUGIN_SLUG__'));
+			$util_menu->set_title(__('Utility', 'favpress'));
 			$util_menu->set_name('menu_util');
 			$util_menu->set_icon('font-awesome:fa-ambulance');
 
 			// setup restore default section
 			$restore_section = new FavPress_Option_Control_Group_Section();
-			$restore_section->set_title(__('Restore Default', '__PLUGIN_SLUG__'));
+			$restore_section->set_title(__('Restore Default', 'favpress'));
 			$restore_section->set_name('section_restore');
 
 			// setup restore button
@@ -485,7 +485,7 @@ class FavPress_Option
 
 			// setup exim section
 			$exim_section = new FavPress_Option_Control_Group_Section();
-			$exim_section->set_title(__('Export/Import', '__PLUGIN_SLUG__'));
+			$exim_section->set_title(__('Export/Import', 'favpress'));
 			$exim_section->set_name('section_exim');
 
 			// setup exim field

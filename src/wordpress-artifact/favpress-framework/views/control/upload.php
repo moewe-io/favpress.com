@@ -7,7 +7,7 @@
 <?php endif; ?>
 
 <div class="buttons">
-	<input class="favpress-js-upload favpress-button button" type="button" value="<?php _e('Choose File', '__PLUGIN_SLUG__'); ?>" />
+	<input class="favpress-js-upload favpress-button button" type="button" value="<?php _e('Choose File', 'favpress'); ?>" />
 	<input class="favpress-js-remove-upload favpress-button button" type="button" value="x" />
 </div>
 <div class="image">

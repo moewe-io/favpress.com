@@ -150,7 +150,7 @@ return array(
             ),
             'favpress-importer'       => array(
                 'path'     => FAVPRESS_PUBLIC_URL . '/js/importer.js',
-                'ver'      => '__PLUGIN_VERSION__',
+                'ver'      => FAVPRESS_VERSION,
                 'deps'     => array('jquery-ui-progressbar', 'jquery-serialize-object'),
                 'localize' => array(
                     'name' => 'favpress_importer',

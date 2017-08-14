@@ -364,7 +364,7 @@ class FavPress_Option_Control_Set
 		{
 			$result['status']  = true;
 			$result['code']    = self::SAVE_SUCCESS;
-			$result['message'] = __('Saving successful', '__PLUGIN_SLUG__');
+			$result['message'] = __('Saving successful', 'favpress');
 			$curr_opt = get_option($option_key, array());
 		}
 		else
@@ -375,13 +375,13 @@ class FavPress_Option_Control_Set
 			{
 				$result['status']  = false;
 				$result['code']    = self::SAVE_FAILED;
-				$result['message'] = __('Saving failed', '__PLUGIN_SLUG__');
+				$result['message'] = __('Saving failed', 'favpress');
 			}
 			else
 			{
 				$result['status']  = true;
 				$result['code']    = self::SAVE_NOCHANGES;
-				$result['message'] = __('No changes made', '__PLUGIN_SLUG__');
+				$result['message'] = __('No changes made', 'favpress');
 			}
 		}
 

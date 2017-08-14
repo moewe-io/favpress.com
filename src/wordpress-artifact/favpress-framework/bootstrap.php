@@ -68,7 +68,7 @@ if (!function_exists('favpress_ajax_wrapper')) {
             try {
                 $result['data'] = call_user_func_array($function, $params);
                 $result['status'] = true;
-                $result['message'] = __("Successful", '__PLUGIN_SLUG__');
+                $result['message'] = __("Successful", 'favpress');
             } catch (Exception $e) {
                 $result['data'] = '';
                 $result['status'] = false;
@@ -77,7 +77,7 @@ if (!function_exists('favpress_ajax_wrapper')) {
         } else {
             $result['data'] = '';
             $result['status'] = false;
-            $result['message'] = __("Unauthorized function", '__PLUGIN_SLUG__');
+            $result['message'] = __("Unauthorized function", 'favpress');
         }
 
         if (ob_get_length()) ob_clean();
