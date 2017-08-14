@@ -2,13 +2,18 @@ env:
   global:
     - secure: DjyeYKo8lyy2o/xvO7mxDU1KrtwYotnV9V6ngFemeD4PsjrxRgGu30eTpuM/emAXUxTTTJL2HbmjRZd5boA3fqoKRzGQbQk0momrdh1AHGIQMkEKBMdc/oVtnqIfQMHUslkwpAPVI0nzJqs8rh6mmxa5TYOsxo0Q0QaRYbuh89wgX8Y/pr3/R4EvhdcTvRDs4EFt0FGsWW9dwr8ZVWQYw7jNrNmalfQJ0ilDuxC/1LjpI/SRooMRAk2NnsRzzNufU/eCzHwvcoPcS0fz82Z22nKG1NiFQlA8r7q7RHmQN7Gk392sl7E9DBvaigrSR+WGT3ZNKFMBwKzFw/SFuc2o0JtAry60GUSZzm0PlmpoYkVPCNMbjQygbTLo3jCq+SYlHI4BZhhXvFPUOA/QVmT6NpdckV+tbmv+wtjeLSYTz9zEvs5FsdA2g/Nf1QXMDc8lvlxiTUPF3krzWAK/au4MiKqsGzA/JbBIDkdfSQkDSMLOPLsmMngOc24mKdeEjfRLDJvtUz7WCNUfukBH3wIX01iqWEkHgnQCfdQQ0rUhuZdXIkLea6tuMZZViV3MLCbUn0LkZ42AEJpq9nh578mXfXn9DibZhZReaV0ZkeK6UtOn2Sf+SYEFwO17KGoQ38Jz65omPGnKv6UM0Ss/AhzcFfhCBwSddyKLMBk2Pti+Na4=
     - secure: LikrSYe6+Of6IIB0jfijLu1XittxLM647zxGmr/nEh1FYdU071DJZAdgLIPX3mFgNKdqflg5UleUbg3KfzZ7fqnEckz2Ule+10GuSuNntzlqqghpPeLDxYsBblr3PQobjc7tNyQPOgQzwAlRcK/2Lvt/CTOHzuYxk+qF5e8ZJNfzt7xSMrtVNhjRJ4+bz3yqD7Ll4qB+zDFfIhGi8dqsrcOi4wdHiMVZ+Wo6Js5YKlMRSpg/irhlp0t4u4HK28rCYY49lcLJ7o9LeYBOubGd+pz2ddK5ki3LNookQEhnju90ggunBJi5ohcUDADBz5bNh9QnqriKSUddd+h0vYgp0SmP4dfKjS1daN9MoDl/jmroITxOuE1VlkEVmv4np4Im+SsuU8ELl4ER8XFsAiPjIXbyRYpyZSL27iWzGxHQtlDhaeyrNktqP8mnhmzoIcBib9N0REkzPoPHOeOy4cyMaGFx8HDlWmuoRBFHRB0w0yEJXHm1xetVQ8TKsNGQwpdlKP8jSLWqIqYR+6ktb+CsdI1/tkQOWlEIoNqJtmV/knhdNt92T5+JyJINbAnv59YQxvDRNSj6Bvz37mozAMmFMP/+4jicIpY/epjLcoh/jARWlsif6s7ruY9GL1ka6kL4lnR5O0h6o2R1NTH6/aChM5BhMt5HPZMyar0eXrllGTk=
-before_install:
-- npm install gulp -g
-install:
-- npm update
-- cp config.local.example.js config.local.js
+before_script:
+  - "rm -f -r $TRAVIS_BUILD_DIR/target"
 script:
-- gulp release
+  -  BUILD_NUMBER="$(date +'%Y').$(date +'%m').$TRAVIS_BUILD_NUMBER"
+  - "mkdir -p $TRAVIS_BUILD_DIR/target/favpress"
+  - "cp -r $TRAVIS_BUILD_DIR/src/wordpress-artifact/* $TRAVIS_BUILD_DIR/target/favpress/"
+  - "sed -i -- 's/__PRODUCT_VERSION__/$BUILD_NUMBER/g' $TRAVIS_BUILD_DIR/target/favpress/favpress.php"
+  # Compile SCSS files
+  # We upload the files for now. Better solution needed.
+
+  # Package the plugin
+  - "jar -cMf $TRAVIS_BUILD_DIR/target/favpress.zip -C $TRAVIS_BUILD_DIR/target favpress"
 after_success:
   - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/release-full-package/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip"
   - "curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/release-full-package/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updater.json"

@@ -6,7 +6,7 @@
 |--------------------------------------------------------------------------
 */
 
-defined('FAVPRESS_VERSION')     or define('FAVPRESS_VERSION'    , '__PRODUCT_VERSION__');
+defined('FAVPRESS_VERSION')     or define('FAVPRESS_VERSION'    , FAVPRESS_PLUGIN_VERSION);
 defined('FAVPRESS_NAMESPACE')   or define('FAVPRESS_NAMESPACE'  , 'FavPress');
 defined('FAVPRESS_DIR')         or define('FAVPRESS_DIR'        , untrailingslashit(dirname(__FILE__)));
 defined('FAVPRESS_DIR_NAME')    or define('FAVPRESS_DIR_NAME'   , basename(FAVPRESS_DIR));

@@ -4,7 +4,7 @@
  * Plugin URI: http://www.favpress.com/
  * Description: An option and metabox framework for WordPress for developers.
  * Version: __PRODUCT_VERSION__
- * Author: MOEWE GbR and Contributors
+ * Author: MOEWE and controbutors
  * Author URI: https://www.moewe.io
  * License: GPLv3
 */

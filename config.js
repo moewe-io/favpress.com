@@ -20,7 +20,6 @@ var version = majorVersion + buildVersion;
 var placeholders = {
     '__PRODUCT_SLUG__': pluginFileName,
     '__PRODUCT_VERSION__': version,
-    '__PRODUCT_TITLE__': 'FavPress',
     '__PRODUCT_DESCRIPTION__': 'An option and metabox framework for WordPress for developers.',
     '__PRODUCT_URI__': 'http://www.favpress.com/',
     '__PRODUCT_DOCUMENTATION_URI__': 'http://www.favpress.com/',
