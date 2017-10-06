@@ -71,7 +71,7 @@ return array(
             'select2'                 => array(
                 'path'     => FAVPRESS_PUBLIC_URL . '/js/vendor/select2.min.js',
                 'deps'     => array('jquery'),
-                'ver'      => '3.3.2',
+                'ver'      => '4.0.4',
                 'override' => true,
             ),
             'select2-sortable'        => array(
@@ -183,8 +183,9 @@ return array(
                 'deps' => array(),
             ),
             'select2'               => array(
-                'path' => FAVPRESS_PUBLIC_URL . '/css/vendor/select2.css',
+                'path' => FAVPRESS_PUBLIC_URL . '/css/vendor/select2.min.css',
                 'deps' => array(),
+                'ver'  => '4.0.4',
             ),
             'reveal'                => array(
                 'path' => FAVPRESS_PUBLIC_URL . '/css/vendor/reveal.css',
