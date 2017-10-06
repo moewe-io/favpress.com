@@ -27,37 +27,6 @@ Any contribution is welcome. You can:
 5. Develop plugins using the framework.
 6. Fund us through buying our [plugins](http://codecanyon.net/user/scrobbleme/portfolio?ref=scrobbleme).
 
-## How to build
-
-### Requirements
-
-* Install [Node.Js](https://nodejs.org/)
-* Install gulp
-
-      npm install gulp -g
-      npm update
-
-* Copy ```config.local.example.js``` to ```config.local.js``` and adapt it to your needs
-
-### Build
-
-#### On updated package.json
-
-    npm update
-
-#### Regular build
-
-    gulp
-
-#### Watch the source folder
-
-    gulp
-    gulp watch
-
-#### Release build
-
-    gulp release
-
 ## Credits
 
 The original authors of [Vafpress](https://github.com/vafour/vafpress-framework).
