@@ -25,8 +25,8 @@ script:
   # - zip -r $TRAVIS_BUILD_DIR/target/favpress.zip $TRAVIS_BUILD_DIR/target/favpress
   - ls -al $TRAVIS_BUILD_DIR/target/
 after_success:
-  - curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip
-  - curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updater.json
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/favpress.zip -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/favpress.zip
+  - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then curl --ftp-create-dirs -T $TRAVIS_BUILD_DIR/target/updater.json -u $FTP_USER:$FTP_PASSWORD ftp://moewe.io/$TRAVIS_BRANCH/updater.json
 deploy:
   provider: releases
   api_key:
