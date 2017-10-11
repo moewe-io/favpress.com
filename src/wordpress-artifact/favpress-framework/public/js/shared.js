@@ -631,18 +631,10 @@ favpress.binding_event = function(ids, idx, field, func, parent, thecase)
 	{
 		jQuery(parent).delegate(name, 'change', function(){favpress.binding_action(ids, field, func, thecase);});
 	}
-	/*else if(jQuery.inArray(dest_type, typing) !== -1 )
-	{
-		jQuery(name).typing({
-			stop: function(event, $elem){
-				favpress.binding_action(ids, field, func, thecase);
-			},
-			delay: 400
-		});
-	}*/
     else if(jQuery.inArray(dest_type, typing) !== -1 )
     {
         jQuery(name).on('input', function(event, $elem){
+            // TODO At least some timeout should be used
             favpress.binding_action(ids, field, func, thecase);
         });
     }
