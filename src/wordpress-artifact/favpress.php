@@ -23,3 +23,4 @@ $favpress_updater = Puc_v4_Factory::buildUpdateChecker(
     'https://apps.moewe.io/favpress/' . get_option('favpress_release_branch', 'stable') . '/updater.json', __FILE__, 'favpress', 24
 );
 $favpress_updater->throttleRedundantChecks = true;
+

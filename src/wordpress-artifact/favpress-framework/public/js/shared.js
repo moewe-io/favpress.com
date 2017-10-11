@@ -631,7 +631,7 @@ favpress.binding_event = function(ids, idx, field, func, parent, thecase)
 	{
 		jQuery(parent).delegate(name, 'change', function(){favpress.binding_action(ids, field, func, thecase);});
 	}
-	else if(jQuery.inArray(dest_type, typing) !== -1 )
+	/*else if(jQuery.inArray(dest_type, typing) !== -1 )
 	{
 		jQuery(name).typing({
 			stop: function(event, $elem){
@@ -639,7 +639,19 @@ favpress.binding_event = function(ids, idx, field, func, parent, thecase)
 			},
 			delay: 400
 		});
-	}
+	}*/
+    else if(jQuery.inArray(dest_type, typing) !== -1 )
+    {
+        jQuery(name).on('input', function(event, $elem){
+            favpress.binding_action(ids, field, func, thecase);
+        });
+    }
+    else if(jQuery.inArray(dest_type, typing) !== -1 )
+    {
+        jQuery(name).on('load', function(event, $elem){
+            favpress.binding_action(ids, field, func, thecase);
+        });
+    }
 	else
 	{
 		jQuery(parent).delegate(name, 'change', function(){favpress.binding_action(ids, field, func, thecase);});
