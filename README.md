@@ -14,7 +14,7 @@ Our initial goals are
 
 ## Example Plugin
 
-You can download an [example plugin](https://github.com/moewe-io/favpress-demo-plugin) from [here](https://github.com/moewe-io/favpress-demo-plugin/releases/download/1.0.0/favpress-demo-plugin-stable.zip).
+You can download an [example plugin](https://github.com/moewe-io/favpress-demo-plugin) from [here](https://github.com/moewe-io/favpress-demo-plugin/releases/download/1.1.0/favpress-demo-plugin.zip).
 
 The plugin:
 
