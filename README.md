@@ -12,6 +12,15 @@ Our initial goals are
 2. Only one version, no freemium or premium version. Everyone should be able to use the framework without thinking about.
 3. For developers. We want a basic framework developers can easily use. Just basic features, not too fancy stuff or too many features.
 
+## Example Plugin
+
+You can download an [example plugin](https://github.com/moewe-io/favpress-demo-plugin) from [here](https://github.com/moewe-io/favpress-demo-plugin/releases/download/1.0.0/favpress-demo-plugin-stable.zip).
+
+The plugin:
+
+* Gives a nice overview of FavPress features
+* Is a good entry point for developers using FavPress
+
 ## Use in your plugin or theme
 
 See the official [documentation](http://favpress.com)
