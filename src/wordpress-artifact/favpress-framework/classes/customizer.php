@@ -13,10 +13,21 @@ class FavPress_Customizer {
     }
 
     function __construct() {
-        add_action('customize_register', array($this, 'favpress_register_customizers'), 0);
+        add_action('customize_register', array($this, 'register_customizers'), 0);
+
+        add_filter('alpha-color-picker-scripts', array($this, 'alpha_color_picker_scripts'));
+        add_filter('alpha-color-picker-styles', array($this, 'alpha_color_picker_styles'));
     }
 
-    function favpress_register_customizers($wp_customize) {
+    function register_customizers($wp_customize) {
         require_once(FAVPRESS_DIR . '/classes/customizer/alpha_color/alpha-color-picker.php');
+    }
+
+    function alpha_color_picker_scripts($default) {
+        return FAVPRESS_URL . '/classes/customizer/alpha_color/alpha-color-picker.js';
+    }
+
+    function alpha_color_picker_styles($default) {
+        return FAVPRESS_URL . '/classes/customizer/alpha_color/alpha-color-picker.css';
     }
 }
