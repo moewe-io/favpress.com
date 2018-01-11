@@ -1,3 +1,6 @@
+*.iml
 _site
 .sass-cache
 .jekyll-metadata
+main.css
+main.css.map

@@ -28,8 +28,6 @@ collections:
   output: true
  faqs:
   output: false
- changes:
-  output: false
 
 defaults:
   -
