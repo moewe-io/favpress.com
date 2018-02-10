@@ -529,8 +529,8 @@ class WPAlchemy_MetaBox
 			// through "maybe_unserialize()" in "plugins/wordpress-importer/wordpress-importer.php"
 			// the "import_post_meta" action is called after "maybe_unserialize()"
 			
-			global $wp_import;
-
+            if ( isset( $wp_import->posts ) && ( is_array( $wp_import->posts ) || is_object( $wp_import->posts ) ) )
+            {
 			foreach ( $wp_import->posts as $post )
 			{
 				if ( $post_id == $post['post_id'] )
@@ -541,7 +541,7 @@ class WPAlchemy_MetaBox
 						{
 							// try to fix corrupted serialized data, specifically "\r\n" being converted to "\n" during wordpress XML export (WXR)
 							// "maybe_unserialize()" fixes a wordpress bug which double serializes already serialized data during export/import
-							$value = maybe_unserialize( preg_replace( '!s:(\d+):"(.*?)";!es', "'s:'.strlen('$2').':\"$2\";'", stripslashes( $meta['value'] ) ) );
+                            $value = maybe_unserialize( $this->fix_serialized_string_type( $meta['value'] ) );
 							
 							update_post_meta( $post_id, $key,  $value );
 						}
@@ -550,6 +550,21 @@ class WPAlchemy_MetaBox
 			}
 		}
 	}
+    }
+
+    /**
+     * @since   1.6
+     */
+    protected function fix_serialized_string_type( $serialized_data ) {
+        return preg_replace_callback( '!s:(\d+):"(.*?)";!s', array( $this, 'fix_serialized_string_type_callback' ), stripslashes( $serialized_data ) );
+    }
+
+    /**
+     * @since   1.6
+     */
+    protected function fix_serialized_string_type_callback( $matches ) {
+        return sprintf( 's:%s:"%s";', strlen( $matches[2] ), $matches[2] );
+    }
 
 	/**
 	 * Used to initialize the meta box, runs on WordPress admin_init action,
