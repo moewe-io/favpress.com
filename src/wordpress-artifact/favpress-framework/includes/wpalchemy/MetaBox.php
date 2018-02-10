@@ -2667,6 +2667,12 @@ class WPAlchemy_MetaBox
 		$last = key($arr);
 		unset($arr[$last]);
 		$meta = $this->get_meta_by_array($arr);
+        if ($meta == null) {
+            return 0;
+        }
+        if (!(is_array($meta) || $meta instanceof Countable)) {
+            return 1;
+        }
 		return count($meta);
 	}
 
