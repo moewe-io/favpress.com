@@ -337,6 +337,12 @@ class FavPress_Metabox extends WPAlchemy_MetaBox
 		return $fields;
 	}
 
+    /**
+     * @param $field
+     * @param $mb FavPress_Metabox
+     * @param bool $in_group
+     * @return mixed
+     */
 	function _enfactor_field($field, $mb, $in_group = false)
 	{
 		$is_multi = FavPress_Util_Reflection::is_multiselectable($field['type']);

@@ -192,8 +192,10 @@ if (!function_exists('favpress_enqueue_scripts')) {
 
 if (!function_exists('favpress_metabox')) {
     function favpress_metabox($key, $default = null, $post_id = null) {
+        if(is_admin() && in_the_loop()){
+            error_log( 'favpress_metabox probably called in loop within administration. This is not working. See https://github.com/moewe-io/favpress.com/issues/21' );
+        }
         global $post;
-
         $favpress_metaboxes = FavPress_Metabox::get_pool();
 
         if (!is_null($post_id)) {
@@ -205,6 +207,7 @@ if (!function_exists('favpress_metabox')) {
             return $default;
 
         $keys = explode('.', $key);
+        /** @var FavPress_Metabox $temp */
         $temp = null;
 
         foreach ($keys as $idx => $key) {
