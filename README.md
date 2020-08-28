@@ -1,3 +1,15 @@
+Don't use anymore!
+==================
+
+Please use another more modern framework instead.
+
+I.e.
+
+* https://toolset.com
+* https://www.advancedcustomfields.com
+* https://metabox.io
+* https://redux.io
+
 FavPress Framework Plugin
 =========================
 ![Build status](https://travis-ci.org/moewe-io/favpress.com.svg?branch=master)
