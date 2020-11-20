@@ -10,6 +10,13 @@ I.e.
 * https://metabox.io
 * https://redux.io
 
+Pull request for compatibility are welcome!
+==================
+
+FavPress is not compatible with the latest jQuery updates in WordPress 5.5+.
+
+Pull request are welcome.
+
 FavPress Framework Plugin
 =========================
 ![Build status](https://travis-ci.org/moewe-io/favpress.com.svg?branch=master)
